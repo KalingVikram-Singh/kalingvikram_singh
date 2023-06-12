@@ -1,10 +1,9 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Kaling Vikram Singh</title>
+  <title>Chitrabhanu Chaudhuri</title>
   <style type="text/css">
     body {
       background-color: #666666;
@@ -39,32 +38,34 @@
       <a href="personal.html">Bla Bla</a>
       <hr /><hr />
     </div>
-    <div id="title">Kaling Vikram Singh</div>  
+    <div id="title">Chitrabhanu Chaudhuri</div>  
     <div id="bodyArea">
       <table border="0" cellpadding="10" cellspacing="20">
         <tr>
           <td>
-            <img src="image/myself.jpeg" alt="myself" width="200">
+            <img src="images/myself.jpg" alt="myself" width="200">
           </td>
           <td>
             <a href="http://www.niser.ac.in/" target="new">  
             National Institute of Science Education and Research</a> Bhubaneswar<br>
             P.O. Jatni, Khurda 752050, Odisha, India<br>
-            Email: kalingvikram [dot] singh [at] outlook [dot] com<br>
+            Office: M - 227  <br>
+            Email: chitrabhanu [at] niser [dot] ac [dot] in<br>
           </td>
         </tr>
       </table>
-      <p> I am a masters student at NISER, currently in 4th year of my course. I am doing my majors in Physics along with a minor 
-      in computer sciences. I have a keen interest in material sciences at nano scales and also love to study fluid dynamics and chaos.
-       I also love studying computer sciences and have knowledge of coding in python, AI and ML </p>
+      <p> I am an Assistant Professor at NISER Bhubaneshwar. </p>
       
-      <p>I do research on nano materials </p>
+      <p>My research revolves around the topolgy and geometry of the Moduli of Curves. The Moduli of Curves parametrizes 
+      algebraic curves or Riemann surfaces upto isomorphisms. It has been a central topic in mathematical research for several 
+      decades and brings various fields of mathematics together, for example Algebraic Geometry, Geometric Group theory and 
+      Teichmüller theory. It has important connections with physics aswell. </p>
       
       <p>Here is my updated <a href="files/CV.pdf" target="new">Curriculum Vitae</a>.</p>
 
       <hr>
 
-      <!--<p><strong>Publications and Preprints</strong></p>
+      <p><strong>Publications and Preprints</strong></p>
       <ul>
         <li><em>Limits of Teichmuller geodesics in the Bers boundary (working title), with Pranav Haridas (in preparation).
       
@@ -196,9 +197,9 @@
             (<a href="files/NISER_Outreach21Jan2022.pdf" target="new">Slides</a>)</li>
       </ul>
       <br>
-      <hr>-->
+      <hr>
       
-      <p>last modified: June, 2023</p>
+      <p>last modified: 3 March, 2021</p>
     </div>
   </div>
 </body>
