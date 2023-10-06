@@ -1,0 +1,786 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="Generator" content="Kate, the KDE Advanced Text Editor" />
+<title>article_3.tex</title>
+</head>
+<!-- Highlighting: "LaTeX" -->
+<body>
+<pre style='color:#1f1c1b;background-color:#ffffff;'>
+<span style='color:#898887;'>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+<span style='color:#898887;'>% Stylish Article</span>
+<span style='color:#898887;'>% LaTeX Template</span>
+<span style='color:#898887;'>% Version 2.2 (2020-10-22)</span>
+<span style='color:#898887;'>%</span>
+<span style='color:#898887;'>% This template has been downloaded from:</span>
+<span style='color:#898887;'>% http://www.LaTeXTemplates.com</span>
+<span style='color:#898887;'>%</span>
+<span style='color:#898887;'>% Original author:</span>
+<span style='color:#898887;'>% Mathias Legrand (legrand.mathias@gmail.com) </span>
+<span style='color:#898887;'>% With extensive modifications by:</span>
+<span style='color:#898887;'>% Vel (vel@latextemplates.com)</span>
+<span style='color:#898887;'>%</span>
+<span style='color:#898887;'>% License:</span>
+<span style='color:#898887;'>% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)</span>
+<span style='color:#898887;'>%</span>
+<span style='color:#898887;'>%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%</span>
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+<b><span style='color:#644a9b;'>\documentclass</span></b>[fleqn,10pt]{<span style='color:#0095ff;'>SelfArx</span>} <span style='color:#898887;'>% Document font size and equations flushed left</span>
+<b><span style='color:#644a9b;'>\usepackage</span></b>{<span style='color:#0095ff;'>graphicx</span>}
+<b><span style='color:#644a9b;'>\usepackage</span></b>{<span style='color:#0095ff;'>braket</span>}
+
+<b><span style='color:#644a9b;'>\usepackage</span></b>[english]{<span style='color:#0095ff;'>babel</span>} <span style='color:#898887;'>% Specify a different language here - english by default</span>
+<b><span style='color:#644a9b;'>\usepackage</span></b>{<span style='color:#0095ff;'>amsmath,amssymb</span>}
+<b><span style='color:#644a9b;'>\usepackage</span></b>{<span style='color:#0095ff;'>lipsum</span>} <span style='color:#898887;'>% Required to insert dummy text. To be removed otherwise</span>
+
+<span style='color:#644a9b;'>\newcommand</span>{<span style='color:#0095ff;'>\insertimage</span>}[3][0.9<span style='color:#644a9b;'>\columnwidth</span>]{
+<span style='color:#898887;'>%size of the image relative to column-width set default to 0.8\columnwidth (which means if you write</span>
+<span style='color:#898887;'>%\insertimage{filename}{caption} </span>
+<span style='color:#898887;'>%it will come up image with default size.</span>
+<span style='color:#898887;'>% adjust the size with </span>
+<span style='color:#898887;'>%\insertimage{filename}{caption}[size you want]</span>
+<b>\begin</b>{<span style='color:#0095ff;'>minipage</span>}{1<span style='color:#644a9b;'>\columnwidth</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>center</span>}
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[width={#1}]{<span style='color:#0095ff;'>#2</span>}
+<span style='color:#644a9b;'>\captionof</span>{figure}{{#3}}
+<b>\end</b>{<span style='color:#0095ff;'>center</span>}
+<b>\end</b>{<span style='color:#0095ff;'>minipage</span>}
+}
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	COLUMNS</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+<span style='color:#644a9b;'>\setlength</span>{<span style='color:#644a9b;'>\columnsep</span>}{0.55cm} <span style='color:#898887;'>% Distance between the two columns of text</span>
+<span style='color:#644a9b;'>\setlength</span>{<span style='color:#644a9b;'>\fboxrule</span>}{0.75pt} <span style='color:#898887;'>% Width of the border around the abstract</span>
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	COLORS</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+<span style='color:#644a9b;'>\definecolor</span>{color1}{RGB}{0,0,90} <span style='color:#898887;'>% Color of the article title and sections</span>
+<span style='color:#644a9b;'>\definecolor</span>{color2}{RGB}{0,20,20} <span style='color:#898887;'>% Color of the boxes behind the abstract and headings</span>
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	HYPERLINKS</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+<b><span style='color:#644a9b;'>\usepackage</span></b>{<span style='color:#0095ff;'>hyperref</span>} <span style='color:#898887;'>% Required for hyperlinks</span>
+
+<span style='color:#644a9b;'>\hypersetup</span>{
+	hidelinks,
+	colorlinks,
+	breaklinks=true,
+	urlcolor=color2,
+	citecolor=color1,
+	linkcolor=color1,
+	bookmarksopen=false,
+	pdftitle={Title},
+	pdfauthor={Author},
+}
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	ARTICLE INFORMATION</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+<span style='color:#644a9b;'>\JournalInfo</span>{NISER LAB} <span style='color:#898887;'>% Journal information</span>
+<span style='color:#644a9b;'>\Archive</span>{NISER} <span style='color:#898887;'>% Additional notes (e.g. copyright, DOI, review/research article)</span>
+
+<span style='color:#644a9b;'>\PaperTitle</span>{SQUID AND RELATED EXPERIMENTS} <span style='color:#898887;'>% Article title</span>
+
+<span style='color:#644a9b;'>\Authors</span>{Kaling Vikram Singh<span style='color:#644a9b;'>\textsuperscript</span>{1}} <span style='color:#898887;'>% Authors</span>
+<span style='color:#644a9b;'>\affiliation</span>{<span style='color:#644a9b;'>\textsuperscript</span>{1}<span style='color:#644a9b;'>\textit</span>{National Institute of Science Education and Research, Roll 2011074}} <span style='color:#898887;'>% Author affiliation</span>
+
+<span style='color:#644a9b;'>\affiliation</span>{*<span style='color:#644a9b;'>\textbf</span>{Corresponding author}: kalingvikram.singh@niser.ac.in} <span style='color:#898887;'>% Corresponding author</span>
+
+<span style='color:#644a9b;'>\Keywords</span>{Super conductivity---SQUID---Transition temperature---YBCO} <span style='color:#898887;'>% Keywords - if you don't want any simply remove all the text between the curly brackets</span>
+<span style='color:#644a9b;'>\newcommand</span>{<span style='color:#0095ff;'>\keywordname</span>}{Keywords} <span style='color:#898887;'>% Defines the keywords heading name</span>
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	ABSTRACT</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+<span style='color:#644a9b;'>\Abstract</span>{The study includes a thorough theoretical analysis of the fundamental characteristics of superconductors, Josephson Junctions, and DC-SQUIDs. The three most significant phenomenological characteristics of superconductors: zero resistance, perfect diamagnetism, and macroscopic phase coherence have been introduced. Next, the fundamental characteristics of Josephson junctions RT, IV, and shapiro characteristics as well as their sensitivity to microwave signals have been covered. Two Josephson Junctions on a superconducting loop running parallel to one another make up a DC SQUID. The basic mechanism of SQUIDs have been explained to establish their flux-voltage conversion . The transition temperature of YBCO powder was determined using LC circuits, and experiments were carried out to determine various SQUID probe properties
+ }
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+<b>\begin</b>{<span style='color:#0095ff;'>document</span>}
+
+<span style='color:#644a9b;'>\maketitle</span> <span style='color:#898887;'>% Output the title and abstract box</span>
+
+<span style='color:#644a9b;'>\tableofcontents</span> <span style='color:#898887;'>% Output the contents section</span>
+
+<span style='color:#644a9b;'>\thispagestyle</span>{empty} <span style='color:#898887;'>% Removes page numbering from the first page</span>
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	ARTICLE CONTENTS</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<b>\section*</b>{<b>Objectives</b>}
+<span style='color:#898887;'>% \addcontentsline{toc}{section}{Objectives}</span>
+<b>\begin</b>{<span style='color:#0095ff;'>itemize</span>}
+ 
+ <span style='color:#644a9b;'>\item</span> To study the working of SQUID
+ <span style='color:#644a9b;'>\item</span> To study the superconductor properties
+ <span style='color:#644a9b;'>\item</span> To find the transition temperature of YBCO
+<b>\end</b>{<span style='color:#0095ff;'>itemize</span>}
+<span style='color:#898887;'>%-------------------------------------------------</span>
+<b>\section</b>{<b>Introduction</b>} <span style='color:#898887;'>% The \section*{} command stops section numbering</span>
+<span style='color:#898887;'>% \addcontentsline{toc}{section}{Introduction} % Adds this section to the table of contents</span>
+Kammerlingh Onnes and his group were first, in 1911, to report the existence of a superconductor, namely a  superconducting state of mercury at 4.2 Kelvin after liquifying Helium gas. Since then, different materials were tested for existence of the superconducting states and this lead to the theory of superconductivity.<span style='color:#644a9b;'>\newline</span>
+
+<span style='color:#644a9b;'>\noindent</span> Supercondutors are materials with exceptional properties. Below a temperature, critical temperatures (T<span style='color:#ff5500;'>$_{c}$</span>), superconductors lose all its electrical resistivity and become diamagnetic. These materials also show Meissner effect, the phenomena of expulsion of a magnetic field from a superconductor during its transition to the superconducting state when it is cooled below the critical temperature.
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.34]{<span style='color:#0095ff;'>type.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Type 1 and Type 2 superconductors [Hale].}
+<b>\label</b>{<span style='color:#0095ff;'>fig:type</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+
+<span style='color:#644a9b;'>\noindent</span> Superconductors are classified based on the strength of Meissner effect and critical temperature (T<span style='color:#ff5500;'>$_{c}$</span>) as TYPE-1(low temperature superconductor) and TYPE-2 (high temperature superconductor). TYPE 1 supercondutors have a  T<span style='color:#ff5500;'>$_{c}$</span>  <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\leq</span><span style='color:#ff5500;'>$</span> 10K. They show perfect Meissner effect along perfect diamagnetism and very low critical field. The transition from non superconducting to superconducting of TYPE 1 superconductors is abrupt and show single critical fields. TYPE 2 semiconductors, on the other hand, have T<span style='color:#ff5500;'>$_{c}$</span> <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\ge</span><span style='color:#ff5500;'>$</span> 10K. They partly show Meissner effect along with imperfect diamagnetism and comparatively higher critical fields. The transition of these superconductors has a mixed state that is between normal and the superconducting states, limited by two separate critical fields at the extremes of the mixed state as shown in <b>\ref</b>{<span style='color:#0095ff;'>fig:type</span>}.<span style='color:#644a9b;'>\newline</span>
+
+
+
+<span style='color:#644a9b;'>\noindent</span> In 1957,  Bardeen-Cooper-Schrieffer (BCS) developed the theory of superconductivity to explain the physics behind superconductivity of TYPE 1 superconductors. The theory of superconductivity for TYPE 2 superconductors was given by Gilsberg and Landau in the same year.
+
+<b>\subsection</b>{<b>BCS Theory</b>}
+The BCS theory is based on the existence of Cooper pairs. Cooper pairs are a pair of electrons in a superconducting system which are attractively bounded to each other alongside having equal and opposite momenta and spins. Consider a pair of electrons just outside the fermi surface such that they have opposite momenta <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{K}$</span> and -<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{K}$</span>. The hamiltonian is given by:
+
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> H = 2</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k} + </span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}V_{k}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+
+<span style='color:#644a9b;'>\noindent</span> The states can be treated as superposition of multiple states, i.e, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'> = </span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}$</span>g<span style='color:#ff5500;'>$_{k}</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{k}$</span>. Using hamilton's equation, we have: 
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>split</span>}
+<span style='color:#ff5500;'> H</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'> = E</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\\</span>
+<span style='color:#ff5500;'> g_{k}[E - 2</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k}] = </span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{kk^{'}}v_{kk^{'}}g_{k^{'}}</span><span style='color:#3daee9;'>\\</span>
+<span style='color:#ff5500;'> g_{k} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{kk^{'}}v_{kk^{'}}g_{k^{'}}}{E - 2</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k}}</span>
+<span style='color:#ff5500;'> </span><b>\end</b>{<span style='color:#0095ff;'>split</span>}
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Since g<span style='color:#ff5500;'>$_{k}$</span> are amplitudes, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}$</span>g<span style='color:#ff5500;'>$_{k}$</span> = 1. The potential is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'>    V_{kk^{'}} = </span>
+<span style='color:#ff5500;'>    </span><b>\begin</b>{<span style='color:#bf0303;'>cases</span>}
+<span style='color:#ff5500;'>        V &amp; </span><span style='color:#3daee9;'>\text</span>{if }<span style='color:#ff5500;'> E_{0}^{f} &lt; E &lt; h</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{d}+ E_{f}^{0} </span><span style='color:#3daee9;'>\\</span>
+<span style='color:#ff5500;'>        0 &amp; otherwise</span>
+<span style='color:#ff5500;'>    </span><b>\end</b>{<span style='color:#0095ff;'>cases</span>}
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Thus, we get the integral:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\int</span><span style='color:#ff5500;'>_{E_{0}^{f}}^{E_{0}^{f} + h</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{d}}</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-VN(</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>)}{E-2</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>}d</span><span style='color:#3daee9;'>\epsilon</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Since the density of states is slowly varying function near the fermi surface, we can estimate it be N(<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>$</span>) <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sim</span><span style='color:#ff5500;'>$</span> N(E<span style='color:#ff5500;'>$_{0}^{f}$</span>). Thus, the eq (4) integrates to:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'>exp(</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2}{VN(E_{0}^{f})}) = 1-</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2</span><span style='color:#3daee9;'>\hbar\omega</span><span style='color:#ff5500;'>_{d}}{E - E_{0}^{f}}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+This leads to a pairing energy gap <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>$</span> given by <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>$</span> = E - 2E<span style='color:#ff5500;'>$_{0}^{f}$</span>. For a weak coupling limit, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>$</span> can be found through eq(5) as:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> = 2</span><span style='color:#3daee9;'>\hbar\omega</span><span style='color:#ff5500;'>_{d}exp(</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-2}{N(E_{0}^{f}V)})</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+As long as the potential V is attractive and N(E<span style='color:#ff5500;'>$_{0}^{f}$</span>V) is finite, we see formation of bound pairs of electrons. These bound pair of electrons are called Cooper pairs. After pairing up, these Cooper pairs behave as bosons and loose their fermionic behaviors. Formation of Cooper pairs have two important consequences: (a) The attraction between electrons is phonon mediated, and (b) The coulomb potential is screened in the material due to presence of positive ions in the metal [Kita].
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.19]{<span style='color:#0095ff;'>EP.jpg</span>}
+<span style='color:#644a9b;'>\caption</span>{Electron - Phonon interaction.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:EP</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<span style='color:#644a9b;'>\noindent</span> For a metallic system with electron - phonon interaction (fig:<b>\ref</b>{<span style='color:#0095ff;'>fig:EP</span>}) <span style='color:#ff5500;'>$&gt;$</span> coulomb interaction, the formation of Cooper pairs is feasible. Classically, the displacement of the electrons from the mean position due to attractions towards positive ions lead to the electron - electron interaction mediated through a phonon. The pairing energy gap is experimentally verified and can be determined through methods like ultrasonic absorption below transition temperatures, IV characteristics  of electron tunneling, etc. Other mechanisms such as plasma or magnons can also lead to cooper pair formation, but phonon mechanism is the most common mechanism observed. A system with strong electron-phonon interaction is a poor conductor of electricity at room temperature, but is a good superconductor at absolute zero temperatures. It is a common trait that good conductors of electricity are worse superconductors compared to poor conductors of electricity.<span style='color:#644a9b;'>\newline</span>
+
+<span style='color:#644a9b;'>\noindent</span> The BCS theory states that in a metallic system, all the electrons form cooper pairs. The corresponding energies and eigen states can be found using the following way:<span style='color:#644a9b;'>\newline</span>
+
+<span style='color:#644a9b;'>\noindent</span> Let <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\braket</span><span style='color:#ff5500;'>{k0|-k1}$</span> denote the cooper pair state. Let w<span style='color:#ff5500;'>$_{k}$</span> denote the probability that a system has an occupied cooper pair state. Also, let v<span style='color:#ff5500;'>$_{k}^{2}$</span> = w<span style='color:#ff5500;'>$_{k}$</span>. The general eigen state is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{k}} = u_{k}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{0}_{k} + v_{k}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{1}_{k}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{0}_{k}$</span> is unoccupied state and <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{1}_{k}$</span> is the occupied cooper pair state and <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{0}_{k}$</span> = <span style='color:#ff5500;'>$</span><b>\begin</b>{<span style='color:#0095ff;'>pmatrix</span>}<span style='color:#ff5500;'> 0 </span><span style='color:#3daee9;'>\\</span><span style='color:#ff5500;'> 1 </span><b>\end</b>{<span style='color:#0095ff;'>pmatrix</span>}<span style='color:#ff5500;'>$</span> and <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{1}_{k}$</span> = <span style='color:#ff5500;'>$</span><b>\begin</b>{<span style='color:#0095ff;'>pmatrix</span>}<span style='color:#ff5500;'> 1 </span><span style='color:#3daee9;'>\\</span><span style='color:#ff5500;'> 0 </span><b>\end</b>{<span style='color:#0095ff;'>pmatrix</span>}<span style='color:#ff5500;'>$</span>. Also define the annihilation and creation operators <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{+}$</span> = (<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{1}$</span> + i<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{2}$</span>)/2 and <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{-}$</span> = (<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{1}$</span> - i<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{2}$</span>)/2, where <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{i}$</span> are pauli matrices. Hence, we get the following relations:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>  </span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{+}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{0}_{k} = </span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{1}_{k}, </span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{+}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{1}_{k} = 0 </span><span style='color:#3daee9;'>\\</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>  </span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{-}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{1}_{k} = </span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{0}_{k}, </span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>^{-}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{0}_{k} = 0</span>
+<span style='color:#ff5500;'>$$</span>
+Thus, the hamiltonian for electron - phonon interaction is given by:
+
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> H_{PE} = -</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{V_{0}}{2L^{3}}</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{kk'}(</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>_{k'}^{+}</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>_{k}^{-} + </span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>_{k}^{+}</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>_{k'}^{-}) </span><span style='color:#3daee9;'>\\</span>
+<span style='color:#ff5500;'> </span><b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> or </span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{1mm}H_{PE} = -</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{V_{0}}{L^{3}}</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}(</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>_{k}^{+}</span><span style='color:#3daee9;'>\sigma</span><span style='color:#ff5500;'>_{k}^{-})</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Thus, the potential is restricted between <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$$</span><span style='color:#3daee9;'>\hbar\omega</span><span style='color:#ff5500;'>_{d}$</span> about the fermi energy. 
+The BCS general eigen state is given by:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{BCS}} = </span><span style='color:#3daee9;'>\prod</span><span style='color:#ff5500;'>_{k}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{k}}</span>
+<span style='color:#ff5500;'>$$</span>
+The potential energy change is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\bra</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{BCS}}H_{PE}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{BCS}} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-V_{0}}{L^{3}}</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{kk'}v_{k}u_{k'}u_{k}v_{k'} </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Thus, the potential energy decreases due to coupling. On the other hand, the kinetic energy increases by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\bra</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{BCS}}H_{KE}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{BCS}} = </span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}v^{2}_{k}</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k}$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>^{2}k^{2}}{2m}$</span> - <span style='color:#ff5500;'>$E^{0}_{f}$</span>. Lets define W<span style='color:#ff5500;'>$_{BCS}$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}v^{2}_{k}</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k} - </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-V_{0}}{L^{3}}</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{kk'}v_{k}u_{k'}u_{k}v_{k'}$</span>. The system with minimal W<span style='color:#ff5500;'>$_{BCS}$</span> is favourable since a system tries to minimize the total energy. We already know v<span style='color:#ff5500;'>$^{2}_{k}$</span> + u<span style='color:#ff5500;'>$^{2}_{k}$</span> = 1. Thus, minimizing W<span style='color:#ff5500;'>$_{BCS}$</span> with respect to <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{v_{}}{u_{}}$</span>, we get:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>W^{0}_{BCS} = </span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k}</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k}(1-</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k}}{E_{k}}) - </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{L^{3}}{V^{0}}</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>^{2}</span>
+<span style='color:#ff5500;'>$$</span>
+where <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{k}$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>^{2}k^{2}}{2m}$</span> - <span style='color:#ff5500;'>$E^{0}_{f}$</span>, <span style='color:#ff5500;'>$delta$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{V_{0}}{L^{3}}</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{k'}sin</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>_{k'}cos</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>_{k'}$</span>, E<span style='color:#ff5500;'>$_{k}$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>^{2} + </span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>^{2}}$</span>, v<span style='color:#ff5500;'>$_{k}$</span> = cos<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>_{k}$</span>, and <span style='color:#ff5500;'>$u_{k} = sin</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>_{k}$</span>. The necessary condition for minima is given by :
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>sin(2</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>_{k}) = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>}{E_{k}}</span>
+<span style='color:#ff5500;'>$$</span>
+Using this, the energy gap can be simplified to give:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> E = -</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{N(E^{0}_{f})</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>^{2}}{2}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+The number of electrons in the system are n = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{N(E^{0}_{f})</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>}{2}$</span>. Thus, the binding energy of each electron is given by -<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>$</span>. Thus, we can say that all the electrons in the system form cooper pairs, and have a net energy gap of <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>$</span> for each pair. For weak coupling limit (N(<span style='color:#ff5500;'>$E^{0}_{f}$</span>))<span style='color:#ff5500;'>$&lt;&lt;$</span> 1, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>$</span> can be simplified to give:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\sim</span><span style='color:#ff5500;'>  2</span><span style='color:#3daee9;'>\hbar\omega</span><span style='color:#ff5500;'>_{d}exp(</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-2}{N(E_{0}^{f}V)})</span>
+<span style='color:#ff5500;'>$$</span>
+as shown in eq (6). Condensed matter physics' fundamental Bardeen-Cooper-Schrieffer (BCS) theory accurately describes conventional superconductivity. But it has some serious drawbacks. High-temperature superconductors and materials with complicated underlying mechanisms are not explained by BCS theory, which is mostly applicable to low-temperature superconductors with weak electron-phonon interactions. It simplifies by ignoring effects of magnetic fields, electron-electron repulsion, and non-equilibrium processes. Furthermore, it falls short of explaining the atypical pairing with non-zero angular momentum and the high-temperature superconductivity isotope effect. Despite these flaws, other theories are being researched in order to account for a wider variety of superconducting materials and phenomena. BCS theory is nevertheless crucial for understanding conventional superconductors.
+
+<b>\subsection</b>{<b>Ginzberg - Landau Theory</b>}
+Lets define a order parameter, which is a measure of the degree of order across the boundaries in a phase transition system. This is zero outside the phase transition boundary while non zero within the limits of phase transition boundary.
+
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'>    Order</span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{1mm} parameter  </span>
+<span style='color:#ff5500;'>    </span><b>\begin</b>{<span style='color:#bf0303;'>cases</span>}
+<span style='color:#ff5500;'>        = 0 &amp; </span><span style='color:#3daee9;'>\text</span>{if }<span style='color:#ff5500;'> T &gt; T_{c} </span><span style='color:#3daee9;'>\\</span>
+<span style='color:#ff5500;'>        </span><span style='color:#3daee9;'>\neq</span><span style='color:#ff5500;'> 0 &amp; T &lt; T_{c}</span>
+<span style='color:#ff5500;'>    </span><b>\end</b>{<span style='color:#0095ff;'>cases</span>}
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Let N<span style='color:#ff5500;'>$_{s}$</span> be the concentration of charge carriers in the superconducting state <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{r})}$</span>. We know the following:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> N_{s}</span><span style='color:#3daee9;'>\propto</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\bra</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{r})}</span><span style='color:#3daee9;'>\mathbb</span><span style='color:#ff5500;'>{I}</span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{r})}} </span><span style='color:#3daee9;'>\sim</span><span style='color:#ff5500;'> |</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>(r)|^{2}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Expanding the free energy in terms of order parameter:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> f_{s} = f_{n} + </span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>^{2}) + </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>^{2}</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>^{4}}{2} + . . . - </span><span style='color:#3daee9;'>\int</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{M}.d</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{B}) + </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{(-i</span><span style='color:#3daee9;'>\hbar\nabla</span><span style='color:#ff5500;'> - qA)^{2}}{2m}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>$</span>, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>$</span> are constants that needs to be found out and <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{r})$</span>. For <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{B}$$</span><span style='color:#3daee9;'>\rightarrow</span><span style='color:#ff5500;'>$</span>0, and keeping till biquadratic terms, we have:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> f_{n} - f_{s} = </span><span style='color:#3daee9;'>\alpha\psi</span><span style='color:#ff5500;'>^{2} + </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\beta\psi</span><span style='color:#ff5500;'>^{4}}{2}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Minimizing the free energy with respect to the order parameter (<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>$</span> or <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>^{*}$</span>), we get the following relations:
+
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>(f_{s} - f_{n})_{min} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{|</span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>|^{2}}{2</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>}</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>|</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>|^{2} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{|</span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>|}{</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>}</span>
+<span style='color:#ff5500;'>$$</span>
+Since the critical thermodynamic field is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'>(f_{s} - f_{n})_{min} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{B^{2}_{c}}{2</span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'>_{0}} </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Comparing eq 17 with <span style='color:#ff5500;'>$(f_{s} - f_{n})_{min}$</span>, derived earlier, we get:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> B_{c} = </span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'>_{0}</span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>^{2}}{</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>}}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+
+<span style='color:#898887;'>%--------------------------------------------</span>
+<b>\subsubsection</b>{<b>London penetration depth</b>}
+The magnetic field is a function of time when it is applied to a superconductor that is initially in zero field. The Maxwell equation states that the time-varying magnetic field generates the electric field. In a regular metal, this will cause eddy currents to form, but in a superconductor, the field will result in supercurrents, which are persistent currents. The magnetic field produced by the induced supercurrents will compete with the applied magnetic field. The flux is completely blocked off from the majority of the superconductor if the applied magnetic field is weak. Perfect diamagnetism is a common term used to describe this phenomena. In superconductors, the London penetration depth (usually denoted as <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>$</span>  or <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'> _{L}$</span>) characterizes the distance to which a magnetic field penetrates into a superconductor and becomes equal to 
+e<span style='color:#ff5500;'>$^{-1}$</span> times that of the magnetic field at the surface of the superconductor.
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.35]{<span style='color:#0095ff;'>london.jpg</span>}
+<span style='color:#644a9b;'>\caption</span>{London penetration depth.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:london</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+
+The force equation is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{F}=m </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{d </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{v}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}}{d t}=-e </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{E} </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{v}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}$</span> is the velocity of the superconducting carrier. The field-induced supercurrent density is given by
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{J}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}=-e n_s </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{v}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}},</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#644a9b;'>\noindent</span> where <span style='color:#ff5500;'>$n_s$</span> is the local density of superconducting carriers. Substituting Eq. (20) into Eq. (19) gives
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{d </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{J}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}}{d t}=</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{n_s e^2}{m} </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{E} </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+which is known as the &quot;first London equation&quot;. Taking the curl of both sides of Eq. (21) gives
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{m}{n_s e^2}</span><span style='color:#3daee9;'>\left</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{d </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{J}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}}{d t}</span><span style='color:#3daee9;'>\right</span><span style='color:#ff5500;'>)=</span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{E} </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+which can be rewritten using the Maxwell equation <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{E}=</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-1}{c} d </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B} / d t$</span> to give
+
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{m c}{n_s e^2}</span><span style='color:#3daee9;'>\left</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{d </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{J}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}}{d t}</span><span style='color:#3daee9;'>\right</span><span style='color:#ff5500;'>)+</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{d </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}}{d t}=0</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+In order to obtain the Meissner effect (i.e. <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}=0$</span> in the bulk of the superconductor) the London brothers removed the time derivative in Eq. (23) and postulated the new equation:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{m c}{n_s e^2}</span><span style='color:#3daee9;'>\left</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{J}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}</span><span style='color:#3daee9;'>\right</span><span style='color:#ff5500;'>)+</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}=0  </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Equation (24) is commonly referred to as the &quot;second London equation&quot;. Since the supercurrent density is related to the field <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}$</span> by another Maxwell equation
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{J}_{</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{s}}=</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{c}{4 </span><span style='color:#3daee9;'>\pi</span><span style='color:#ff5500;'>}(</span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}) </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Substitution of Eq. (25) into Eq. ( 24) gives
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_L^2(</span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\nabla</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\times</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B})+</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}=0</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{1}{</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_L^2}=</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{4 </span><span style='color:#3daee9;'>\pi</span><span style='color:#ff5500;'> n_s e^2}{m c^2}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+The variable <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_L$</span> is called the London penetration depth, as shown in fig <b>\ref</b>{<span style='color:#0095ff;'>fig:london</span>}. The <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_L^{-2}$</span> is proportional to the superfluid density <span style='color:#ff5500;'>$n_S$</span>. of Eq. ( 26) is
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}(x)=</span><span style='color:#3daee9;'>\mathbf</span><span style='color:#ff5500;'>{B}(0) </span><span style='color:#3daee9;'>\exp</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\left</span><span style='color:#ff5500;'>(-x / </span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_L</span><span style='color:#3daee9;'>\right</span><span style='color:#ff5500;'>)</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Thus, both the magnetic field <span style='color:#ff5500;'>$B(x)$</span> and the supercurrent density <span style='color:#ff5500;'>$J_S(x)$</span> decay exponentially with distance inside the superconductor over the length scale <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_L$</span>.<span style='color:#644a9b;'>\newline</span>
+
+<span style='color:#644a9b;'>\noindent</span> Thus from <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_{L}$</span> from eq (27), we get:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_{L} = </span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{m}{</span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'>_{0}q^{2}|</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>|^{2}}} = </span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{m</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>}{</span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'>_{0}q^{2}</span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>}} </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\subsubsection</b>{<b>Spatial Variation of order parameter</b>}
+For a 1-D system with <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\vec</span><span style='color:#ff5500;'>{B}$$</span><span style='color:#3daee9;'>\rightarrow</span><span style='color:#ff5500;'>$</span>0,we can have:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>^{2}}{2m}</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\partial</span><span style='color:#ff5500;'>^{2}</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>}{</span><span style='color:#3daee9;'>\partial</span><span style='color:#ff5500;'> x^{2}} + </span><span style='color:#3daee9;'>\alpha\psi</span><span style='color:#ff5500;'> + </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\beta\psi</span><span style='color:#ff5500;'>^{3}}{2} = 0</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Minimizing eq(30) and taking <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{</span><span style='color:#3daee9;'>\infty</span><span style='color:#ff5500;'>}$</span>f, where <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>$</span> is the state deep inside the superconductor and f is the order parameter. For a system with f = 1 + g, where
+g <span style='color:#ff5500;'>$&lt;&lt;$</span>1 (denotes the strength of the order), we have:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>f = 1+ g </span><span style='color:#3daee9;'>\sim</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>}{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{</span><span style='color:#3daee9;'>\infty</span><span style='color:#ff5500;'>}}</span>
+<span style='color:#ff5500;'>$$</span>
+and the equation 30 reduces to:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\partial</span><span style='color:#ff5500;'>^{2}g}{</span><span style='color:#3daee9;'>\partial</span><span style='color:#ff5500;'> x^{2}} - 2g</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2m</span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>^{2}} = 0</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+The factor <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{gl}$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>^{2}}{2m</span><span style='color:#3daee9;'>\alpha</span><span style='color:#ff5500;'>})$</span> is called Gilsberg - Landau coherence length and g <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sim</span><span style='color:#ff5500;'>$</span> exp(<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-x</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{2}}{</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{gl}}$</span>). Thus, the order develops with the length. Hence, the order increases from 0 at the surface to <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>_{</span><span style='color:#3daee9;'>\infty</span><span style='color:#ff5500;'>}$</span> deep within the superconductor over the length scale defined by <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{gl}$</span>.<span style='color:#644a9b;'>\newline</span>
+
+<span style='color:#644a9b;'>\noindent</span> There are two competitive processes in the play, a higher london penetration depth increases the overall free energy of the system, while a higher coherence length leads to lowering of the overall free energy. Thus, one can classify TYPE 1 and TYPE 2 semiconductors based on the different length parameters. The G.L parameter is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\kappa</span><span style='color:#ff5500;'> = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\lambda</span><span style='color:#ff5500;'>_{L}}{</span><span style='color:#3daee9;'>\epsilon</span><span style='color:#ff5500;'>_{gl}}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Thus, we have the following criteria to determine the type of superconductor:
+
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'>    Superconductor: </span>
+<span style='color:#ff5500;'>    </span><b>\begin</b>{<span style='color:#bf0303;'>cases</span>}
+<span style='color:#ff5500;'>        = TYPE 1 &amp; </span><span style='color:#3daee9;'>\text</span>{if }<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\kappa</span><span style='color:#ff5500;'> &lt; </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{1}{</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{2}} </span><span style='color:#3daee9;'>\\</span>
+<span style='color:#ff5500;'>        = TYPE 2 &amp; </span><span style='color:#3daee9;'>\text</span>{if }<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\kappa</span><span style='color:#ff5500;'> &gt; </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{1}{</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{2}}</span>
+<span style='color:#ff5500;'>    </span><b>\end</b>{<span style='color:#0095ff;'>cases</span>}
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+
+<b>\subsection</b>{<b>Josephson junctions and SQUID</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.43]{<span style='color:#0095ff;'>josephson.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Josephson junction.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:josephson</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+Josephson's junction, as shown in <b>\ref</b>{<span style='color:#0095ff;'>fig:josephson</span>},is a device that consists of two superconductors weakly coupled by a region which may be either nonsuperconducting or a weaker superconductor. In such devices, a coherent tunneling of cooper pairs occur, leading to a overall superconductor current, irrespective of the voltage between the two junctions. It is based on the quantum mechanical model of the superconducting state of the metal. The superconducting state <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\bra</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>}$</span> is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\ket</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\psi</span><span style='color:#ff5500;'>} </span><span style='color:#3daee9;'>\sim</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\rho</span><span style='color:#ff5500;'>}exp(i</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>)</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\rho</span><span style='color:#ff5500;'>$</span> is the charge density and <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>$</span> is the quantum mechanical phase. The josephson junction is the quantum analog of youngs double slit experiment. Similar to intensity of the young's double slit experiment being a funciton of phase difference <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\theta</span><span style='color:#ff5500;'>$</span>, the josephson current is a function of phase difference between the two quantum mechanical superconducting states, which is eventually a function of magnetic flux <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span>. A remarkable use of josephson junctions is found in superconducting quantum interference device (SQUID) which is a device that measures very low fluctuations in the magnetic field, and works on the principle of josephson junctions.  
+The equations are given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-i</span><span style='color:#3daee9;'>\hbar\partial</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}}}{</span><span style='color:#3daee9;'>\partial</span><span style='color:#ff5500;'>{t}} = H_{1}</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1} + T</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{-i</span><span style='color:#3daee9;'>\hbar\partial</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2}}}{</span><span style='color:#3daee9;'>\partial</span><span style='color:#ff5500;'>{t}} = H_{2}</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} + T</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Now, suppose, there is a voltage across the insulating region, thus we get:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>i</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{n_{1}}sin</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1} - (</span><span style='color:#3daee9;'>\hbar\dot</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}} + </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{qu}{2})n_{1}cos(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}) = T</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{n_{1}n_{2}}cos</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2}</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>i</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{n_{2}}sin</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - (</span><span style='color:#3daee9;'>\hbar\dot</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2}} + </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{qu}{2})n_{1}sin(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}) = T</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{n_{1}n_{2}}sin</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2}</span>
+<span style='color:#ff5500;'>$$</span>
+Using these, we arrive at the equations:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{n_{1}} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2T}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{n_{1}n_{2}}sin(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - </span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1})</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{n_{2}} = -</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2T}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{n_{1}n_{2}}sin(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - </span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1})</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}} = -</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{iT}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{n_{2}}{n_{1}}}cos(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - </span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}) - </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{qu}{2</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2}} = -</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{iT}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{n_{1}}{n_{2}}}cos(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - </span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}) - </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{qu}{2</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+
+<span style='color:#644a9b;'>\noindent</span> If the superconductors S1 and S2 are identical, then we get the following:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{n_{1}} = -</span><span style='color:#3daee9;'>\dot</span><span style='color:#ff5500;'>{n_{2}} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2T}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}nsin(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - </span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1})</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - </span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1}) = qu</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+
+Hence, even in the absence of the voltage, we see a voltage across the josephson junction. The quantum mechanical phase is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{2} - </span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{1} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{qu}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>} + </span><span style='color:#3daee9;'>\Delta\phi</span><span style='color:#ff5500;'> </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+The current across the junction is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> I_{J} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2T}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}sin(</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{j}t + </span><span style='color:#3daee9;'>\Delta\phi</span><span style='color:#ff5500;'>)</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{j} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2eu}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}$</span>. With some further calculations, it can be found that:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> I_{J} = 2I_{0}sin(</span><span style='color:#3daee9;'>\delta</span><span style='color:#ff5500;'>)cos(</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{eN</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>})</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}$</span> = <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\pi\hbar</span><span style='color:#ff5500;'>}{e}$</span>. Hence, we see the josephson current maxima for integral multiple of flux quanta.
+<b>\subsection</b>{<b>Shapiro effect</b>}
+The current density is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> J(t) = J_{0} sin(</span><span style='color:#3daee9;'>\delta</span><span style='color:#ff5500;'>(0) - </span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{j}t)</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+When the applied potential u is oscillatory (u = u<span style='color:#ff5500;'>$_{0}$</span> + u<span style='color:#ff5500;'>$_{a}$</span> cos(<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{a}$</span>t)), we get the following equation:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> J(t) =  J_{0}</span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{0.5mm}sin</span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{0.5mm}(</span><span style='color:#3daee9;'>\delta</span><span style='color:#ff5500;'>(0) - </span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{j}t - </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2eu_{a}}{</span><span style='color:#3daee9;'>\hbar\omega</span><span style='color:#ff5500;'>_{a}}sin(</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{a}t))</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+This can be simplified to a Bessel's function given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> J(t) =  J_{0}</span><span style='color:#3daee9;'>\sum</span><span style='color:#ff5500;'>_{-</span><span style='color:#3daee9;'>\infty</span><span style='color:#ff5500;'>}^{</span><span style='color:#3daee9;'>\infty</span><span style='color:#ff5500;'>}B_{n}</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2eu_{a}}{</span><span style='color:#3daee9;'>\hbar\omega</span><span style='color:#ff5500;'>_{a}}sin(</span><span style='color:#3daee9;'>\delta</span><span style='color:#ff5500;'>(0) - (n</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{a} + </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2eu_{a}}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>})t)</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+The current density has a time independent DC part and a time dependent AC part. The AC part vanishes for n<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'>_{a}$</span> = -<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2eu_{a}}{</span><span style='color:#3daee9;'>\hbar</span><span style='color:#ff5500;'>}$</span>. Hence, when we see the IV characteristics, we observe step like graphs between current and potential, which as also termed as <span style='color:#644a9b;'>\textbf</span>{Shapiro steps}. The steps are prominent in the microwave frequencies.
+<b>\subsection</b>{<b>Resistance vs Temperature characteristics</b>}
+When the T <span style='color:#ff5500;'>$&gt;$</span> T<span style='color:#ff5500;'>$_{c}$</span>, then the metal does not act as a super conductor and has a finite resistance. But, as the temperature is lowered, due to formation of cooper pairs, the whole system collapses to a single quantum state and leads to decrease in the resistance. Thus, we see a reduction in the resistance for T <span style='color:#ff5500;'>$&lt;$</span> T<span style='color:#ff5500;'>$_{c}$</span>
+<b>\subsection</b>{<b>SQUID chip</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.3]{<span style='color:#0095ff;'>SQUD.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Internal circuit of SQUID chip}
+<b>\label</b>{<span style='color:#0095ff;'>SQUD</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+A SQUID is a magnetometer that has TYPE 2 supercondutor thin film. It has multiple coils to account for modulation and external coupling on a long probe, which is covered by a magnetic shield. The chip contains 2 josephson junctions connected to one another across a voltage source. 
+The SQUID offers Meissner effect, thus restricts any change in the magnetic flux. When there is a change in magnetic field, the SQUID negates the change in flux by applying current in the opposite direction. This current can be measured to find the change in magnetic flux. This further can be used as a DC voltmeter to measure the voltage change in a system. The itnernal circuitry can be seen in fig <b>\ref</b>{<span style='color:#0095ff;'>SQUD</span>}.
+<b>\subsubsection</b>{<b>SQUID parameters</b>}
+<span style='color:#644a9b;'>\textbf</span>{Loop inductance parameter:} The McCumber parameter measures the trade-off between the SQUID's noise performance and its sensitivity to magnetic flux fluctuations. Although a larger typically denotes a more sensitive SQUID, it can also result in greater noise. This variable aids in the design and optimisation of SQUIDs for certain uses, such as measuring magnetic fields. Mathematically, it is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2</span><span style='color:#3daee9;'>\pi</span><span style='color:#ff5500;'> L I_{c}}{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Where, L is the inductance of the SQUID loop, <span style='color:#ff5500;'>$I_{c}$</span>  is the critical current of the SQUID and <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}$</span> is the magnetic flux quantum. Another way to relate loop inductance parameter is through the equation:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{4I_{c}R_{N}}{</span><span style='color:#3daee9;'>\pi\Delta</span><span style='color:#ff5500;'> V} - 1</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+In order to take into account the fluctuations from temperature, the eq. (50) has some corrections as:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{4I_{c}R_{N}}{</span><span style='color:#3daee9;'>\pi\Delta</span><span style='color:#ff5500;'> V}(1- 3.57</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{K_{b}TL}}{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}}) - 1</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+
+<span style='color:#644a9b;'>\noindent\textbf</span>{McCumber parameter:}A shunt resistance is added to Josephson Junctions to prevent unwanted charging effects, however the capacitance can still ruin the arrangement by causing hysteresis in the current-voltage relation. We can bring a Junction/SQUID closer to perfection if we merely make sure that the shunt resistance is low enough to cancel out the resistive effects. McCumber parameter helps establishes this. Mathematically, it is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{c} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2</span><span style='color:#3daee9;'>\pi</span><span style='color:#ff5500;'> R^{2}C}{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+
+<span style='color:#898887;'>%------------------------------------------</span>
+<span style='color:#898887;'>%------------------------------------------------</span>
+<b>\section</b>{<b>Experimental setup</b>}
+<b>\subsection</b>{<b>Cryogenics</b>}
+Cryogenics is the science of ultracooling materials from the room temperature. In the experiment, SQUID chip was ultracooled through the use of liquid nitrogen. The liquid nitrogen remains at 77 K, which was poured into a diwar. The SQUID chip was dipped into the dewar to be ultracooled. Use of liquid nitrogen was due to its easy, cheap availability and inert nature.
+<b>\subsection</b>{<b>SQUID chip</b>}
+The SQUID chip contains a TYPE 2 superconductor called YBCO (Y<span style='color:#ff5500;'>$_{1}$</span>Ba<span style='color:#ff5500;'>$_{2}$</span>Cu<span style='color:#ff5500;'>$_{3}$</span>O<span style='color:#ff5500;'>$_{7}$</span>). It is placed into a cyrogenic probe. The apparatus is wire-bonded to contact pads at the end of the IC chip on which the SQUID chip is mounted in order to conduct transport measurements in the device using the four-probe approach. For electric transport, access is provided to the contact pads. Since SQUID is a very flux-sensitive gadget, it incorporates a conetic alloy produced removable magnetic shield to block any excessive external magnetic flux from entering. Most of the earth's magnetic field is effectively blocked by the mu-metal barrier. An electrical control box with all the circuitry required to run the SQUID is also a part of this system. It's main use is to remove current and magnetic flux from the sample.
+<b>\subsection</b>{<b>Electrical equipments</b>}
+Several IC 741, bread board and connecting wires, including BNC cables were used for the observations. Picometer was used as the oscilloscope for measuring the voltage and observing the different characteristics of the signals.
+<b>\section</b>{<b>Experiment and Observations</b>}
+<b>\subsection</b>{<b>Experiment and problems incurred</b>}
+<b>\subsubsection</b>{<b>IV characterisitics</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.38]{<span style='color:#0095ff;'>IVcharac.png</span>}
+<span style='color:#644a9b;'>\caption</span>{IV characterisitics of SQUID chip.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:IV_char</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+<span style='color:#644a9b;'>\noindent</span> We started the experiment by observing the IV characteristics of the SQUID chip. The YBCO SQUID chip was connected to the electronics box, whose output were connected to picoscope for data visualization. The data was read through the &quot;current&quot; and &quot;voltage&quot; channels of the electronic box. Theoretically, near the zero voltage, there shall be current in the system, due to cooper pair tunneling. The necessary connections were made from the SQUID probe to the electrical box whose output was observed in the picoscope.  Experimentally, the results obtained showed that at 0 voltage, there was indeed a current in the system, as shown in fig <b>\ref</b>{<span style='color:#0095ff;'>fig:IV_char</span>}, which was predicted theoretically. No such issues were observed with the setup, although 2 different SQUID chips were used for observation, one of which was later discarded due to erroneous V - <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span> characterisitics, thus it took a week to settle down with the experiment.
+<b>\subsubsection</b>{<b>V - phi characteristics</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.05]{<span style='color:#0095ff;'>flux.png</span>}
+<span style='color:#644a9b;'>\caption</span>{V - <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span> characteristics of SQUID chip.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:flux</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.11]{<span style='color:#0095ff;'>Vphi characteristics.jpg</span>}
+<span style='color:#644a9b;'>\caption</span>{V - <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span> characteristics of SQUID chip.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:Vphi_char</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+
+
+
+<span style='color:#644a9b;'>\noindent</span> Next, the V - <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span> characteristics were studied. The same setup was used, but instead of I - V knob, V - <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span> knob in the electronics box was used to view the characteristics. Initially, on trying to measuring the characteristics, there was too much noise due to which, we could not plot the V - <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span> characteristics. It was mainly due to external noises, from nearby ongoing experiments and other current carrying equipments. To tackle this, the dewar was wrapped with alumunium foil to reduce external noises, as shown in fig <b>\ref</b>{<span style='color:#0095ff;'>fig:flux</span>}. The elecronic equipments were also kept afar to reduce any external noise. Still, some noise was recorded, as seen in the fig <b>\ref</b>{<span style='color:#0095ff;'>fig:Vphi_char</span>}. Overall, we still have some noise, due to which the fit is not perfect. Nevertheless, it is enough to support the theoretical prediction of sinusoidal wave patterns.
+
+<b>\subsubsection</b>{<b>Shapiro steps</b>}
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.12]{<span style='color:#0095ff;'>Shapiro.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Shapiro steps.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:Shapiro</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.19]{<span style='color:#0095ff;'>wavee.jpg</span>}
+<span style='color:#644a9b;'>\caption</span>{Volage output through the wavemeter.}
+<b>\label</b>{<span style='color:#0095ff;'>wavee</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+Next, the formation of Shapiro steps were observed. We used wave generator which uses Klystron reflex which uses oscillation and reflection of electrons at different frequencies to produce microwaves.  A frequency meter was used to get the frequency of the wave generator. An oscilloscope was used to measure the change in the output of the frequency meter. We initially got square waveforms, as shown in <b>\ref</b>{<span style='color:#0095ff;'>wavee</span>}, which by rotating the frequency meter, reduced to very low voltage due to resonance in the cavity. We found the frequency to be 9.75 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.25 GHz. Next, the frequency meter was set to extreme and the wave produced through wavemeter was used for experiment. This wave was now coupled to the SQUID chip using a BNC cable that was poured into the liquid nitrogen for coupling with the superconductor. The Shapiro steps were observed after some issues with the wave generator. The readings were tough to take since there were some loose connections with the klystron tube, leading to no wave generation. But, after some tries, to push the wire, the generator worked to get the data, as shown in <b>\ref</b>{<span style='color:#0095ff;'>fig:Shapiro</span>}. Overall, the steps were observed. 
+<b>\subsubsection</b>{<b>SQUID as a DC voltmeter</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.5]{<span style='color:#0095ff;'>loop.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Analog flux locked loop [STAR].}
+<b>\label</b>{<span style='color:#0095ff;'>fig:loop</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.26]{<span style='color:#0095ff;'>DC.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Flux locked loop output.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:DC</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.26]{<span style='color:#0095ff;'>DC2.png</span>}
+<span style='color:#644a9b;'>\caption</span>{SQUID as DC voltmeter by moving magnet.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:DC2</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+<span style='color:#644a9b;'>\noindent</span> In order to convert the SQUID setup into a DC voltmeter, a flux locked loop was necessary. An analog flux locked circuit was designed to understand the basics of the experiment, as shown in fig <b>\ref</b>{<span style='color:#0095ff;'>fig:loop</span>}. We faced few issues while designing the circuits as there were issues with connections. The connections had to be redone thrice and rechecked everytime in order to get the desired voltage readings. Finally, it was found that the potentiometer used was a source of most of the noise that made the output irrelevant. Thus, a trimpot potentiometer was used to reduce the noise. Further, the input was changed with two 5 volts batteries (earlier power supplies were being used) in order to reduce further noise. We saw a comparatively better results, which meant the power supply had fluctuations. The corresponding plot is given in fig <b>\ref</b>{<span style='color:#0095ff;'>fig:DC</span>}, which has some fluctuations, which were due to potentiometer as when we exchanged it with normal resistors, such fluctuations were absent. We also had to remove some of the in between resistances (10k resistances in fig <b>\ref</b>{<span style='color:#0095ff;'>fig:loop</span>}), as they reduced the signals drastically, and the output were flat lines/ noises. We further went on to use the flux locked loop circuit provided by the manufacturer that is has same circuitry made on the breadboard, but with low noise. We planned to use Expise to measure the voltages, to get better readings, but due to time constraints, we used voltmeters to get the overall voltages. We moved a magnet about the SQUID chip, that produced magnetic flux, thus an opposing voltage which was measured using the voltmeter. The fig <b>\ref</b>{<span style='color:#0095ff;'>fig:DC2</span>} shows the response of the two josephson junctions to flux change. It was used to get changes of orders of 0.0001 V which is better than normal voltmeters. It can also be utilised to obtain very low fluctuations in the magnetic fields. No specific calculations were made for this part of the experiment, as it was just to understand the working of the SQUID as a DC voltmeter
+<b>\subsubsection</b>{<b>Transition temperature of YBCO</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=1]{<span style='color:#0095ff;'>CCS.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Circuit diagram for a constant current source.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:CCS</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.8]{<span style='color:#0095ff;'>superconductor.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Circuit for measuring resistance through superconductor [Luke].}
+<b>\label</b>{<span style='color:#0095ff;'>fig:superconductor</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>} 
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.19]{<span style='color:#0095ff;'>setup.jpg</span>}
+<span style='color:#644a9b;'>\caption</span>{Setup for YBCO T<span style='color:#ff5500;'>$_{c}$</span> measurement.}
+<b>\label</b>{<span style='color:#0095ff;'>setup</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.19]{<span style='color:#0095ff;'>setup2.jpg</span>}
+<span style='color:#644a9b;'>\caption</span>{Circuit setup for YBCO T<span style='color:#ff5500;'>$_{c}$</span> measurement using Expise.}
+<b>\label</b>{<span style='color:#0095ff;'>setup2</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<span style='color:#644a9b;'>\noindent</span> YBCO powder was filled inside a pen cap. It was <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{3}{4}^{th}$</span>filled with the powder and black taped to avoid any powder leaks. It as not fully filled, in order to avoid boundary effects. We had to make temperature sensors and a constant current source in order for the temperature sensor to work. Copper wires were chosen as conducting wires due to their low resistivity. Next, a constant current source was made using zener diode and IC 741. The circuit was made according to fig <b>\ref</b>{<span style='color:#0095ff;'>fig:CCS</span>}. This required some calibrations to get low constant currents, which was achieved through using potentiometer to vary resistances easily. <span style='color:#644a9b;'>\\</span>Further, a temperature sensor was made to detect the temperature change over time. Since a silicon diode has a linear response to the temperature change, the voltage increases with decrease in temperature, a silicon diode across the constant current source of 10 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'>$</span>A was connected. The response of the voltage diode was checked by dipping the diode inside a cryochamber, containing liquid nitrogen. For calibration, the diode, connected with the current source, was dipped in 4 liquids at their freezing temperature which included ehtyl alcohol, ice, liquid nitrogen, acetone and the last reading was taken at room temperature. A calibration curve between voltage and temperature was obtained. Now, the system can be manually connected to ammeters and voltmeters to determine the transition temperature. The calibration curve is shown in fig <b>\ref</b>{<span style='color:#0095ff;'>fig:calibration</span>}.
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.38]{<span style='color:#0095ff;'>calibration.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Calibration curve of voltage vs temperature for silicon diode.}
+<b>\label</b>{<span style='color:#0095ff;'>fig:calibration</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<span style='color:#644a9b;'>\noindent</span> As the temperature goes below <span style='color:#ff5500;'>$T_{c}$</span>, the resistance of the superconductor decreases drastically, and also it shows Meissner effect. A coil wound around such a superconductor would experience low induction and thus, the impedance of the circuit decreases. Thus, a stark change in the impedance (<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\omega</span><span style='color:#ff5500;'> L$</span>) would be noticed when we reach transition temperature. A separate circuit for measuring the current through the coil winding the superconductor was measured refereing to fig <b>\ref</b>{<span style='color:#0095ff;'>fig:superconductor</span>}. We faced issues while measuring the current, as the signal was too low, thus an IC 741 was used to increase the amplitude of the signal by 10 fold. This helped to get better current readings. Once the working of both the temperature sensor and superconductor was verified, they were tied together using a black tape and it was assumed that the temperature of the whole system is same, as shown in fig <b>\ref</b>{<span style='color:#0095ff;'>setup</span>}. Next, the system was dipped into liquid nitrogen to achieve 77 K temperature and then cooled down at room temperature. The readings were noted as the sample heated back to room temperature.
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.45]{<span style='color:#0095ff;'>code.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Python code for acquiring data}
+<b>\label</b>{<span style='color:#0095ff;'>code</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.38]{<span style='color:#0095ff;'>RMS_bare.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Data for voltage through inductor}
+<b>\label</b>{<span style='color:#0095ff;'>RMS</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.38]{<span style='color:#0095ff;'>RMS_fit.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Data fit for voltage through inductor}
+<b>\label</b>{<span style='color:#0095ff;'>fit</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.38]{<span style='color:#0095ff;'>transition temp.png</span>}
+<span style='color:#644a9b;'>\caption</span>{Impedance vs temperature for YBCO}
+<b>\label</b>{<span style='color:#0095ff;'>transition</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+
+<span style='color:#644a9b;'>\noindent</span> We first started with manual readings, but to automate the process, we used Xspise to take all the readings. But, the major issue here was that Xspise measures instantaneous readings and does not give RMS values. A python code was written to get the time stamps along with the values of of current across the superconducting circuit and also the temperature sensor and saving in a CSV file. The fig <b>\ref</b>{<span style='color:#0095ff;'>code</span>} displays the code used to get the values at definite time intervals. Since we expect a sinusoidal graph, we fitted the readings from the superconducting circuit to a sine function to get the RMS value of the system. This RMS value was then taken to find the transition temperature of the YBCO superconductor. The zoomed in observation and fit is given in fig <b>\ref</b>{<span style='color:#0095ff;'>RMS</span>} and fig <b>\ref</b>{<span style='color:#0095ff;'>fit</span>} respectively. The data obtained after getting the temperature vs impedance was processed such that random errors in measurement were ignored through running a python script. Suppose a data point is (251.2546 , 3.934) and the adjacent datapoints are (251.2547, 3.935), (251.2425, 3.935 ), ( 251.2558, 3.936). In such case, the point (251.2425,3.935) is incorrect and can be removed since this is an error while measuring the voltage through the instrument. Thus, after data processing, a plot between impedance and temperature was graphed and the kink was noted. Thus, we obtained the final plot as in fig <b>\ref</b>{<span style='color:#0095ff;'>transition</span>}, in which, T<span style='color:#ff5500;'>$_{c}$</span> = 92.7944 K was determined.
+
+<span style='color:#898887;'>%%%%%%%%%%%%%%%%%%%%%%%%%%5</span>
+<b>\subsection</b>{<b>Analysis and calculations</b>}
+<b>\subsubsection</b>{<b>Critical current, resistance, modulation depth and others</b>}
+Since two equivalent josephson junction are in play inside a SQUID chip, we get current and resistance contributions from both the junctions. The amplification factor of 10,000 and resistances of 10,000 have been already taken into account to find the I - V characteristics of the SQUID. The slope of the graph gives the resistances and the knee point gives the corresponding critical current. Thus, we have:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> R_{c} = 1.174 </span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'> 1.6806</span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{0.4mm} * </span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{0.4mm}10^{-4} </span><span style='color:#3daee9;'>\Omega</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{2mm} ,</span>
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\hspace</span><span style='color:#ff5500;'>{2mm}I_{c} = 38.65 </span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'> A</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Modulation depth is the characteristic voltage of the SQUID. This voltage defines  the maximum voltage which can beachieved by theSQUID when one quantum of  magnetic flux is applied to it. Mathematically, it is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> V_{c} = I_{c}. R_{c}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+Hence, using equation(54):
+
+<span style='color:#ff5500;'>$$V_{c} =  38.65 * (1.174 </span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'> 1.6806 * 10^{-4}) mV$$</span>
+<span style='color:#ff5500;'>$$= 45.37 </span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'> 6.495 * 10^{-3} mV $$</span>
+Using equation 49,50 and 51:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2</span><span style='color:#3daee9;'>\pi</span><span style='color:#ff5500;'> LI_{c}}{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}} = 8.562</span>
+<span style='color:#ff5500;'>$$</span>
+
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} =</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L}</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> I_{c}}{Ic} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{0.01}{38.65}(8.562)</span>
+<span style='color:#ff5500;'>$$</span>
+
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} = 0.002 </span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{4I_{c}R_{N}}{</span><span style='color:#3daee9;'>\pi\Delta</span><span style='color:#ff5500;'> V} - 1 = 11.0091</span>
+<span style='color:#ff5500;'>$$</span>
+and
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{4I_{c}R_{N}}{</span><span style='color:#3daee9;'>\pi\Delta</span><span style='color:#ff5500;'> V}(1- 3.57</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{K_{b}TL}}{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}}) - 1 = 10.8263</span>
+<span style='color:#ff5500;'>$$</span>
+The values are off by <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\sim</span><span style='color:#ff5500;'>$</span> 25<span style='color:#644a9b;'>\%</span> - 30<span style='color:#644a9b;'>\%</span>, which shows that the V - <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>$</span> characteristics had noises which influenced the overall readings. Probably, we could have removed any air that was above the surface, that could have caused some changes in the readings. Thus, we have the loop inductance parameter, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L}$</span> = 8.562 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.002.
+<b>\subsubsection</b>{<b>Flux per quanta and inductance</b>}
+From fig <b>\ref</b>{<span style='color:#0095ff;'>fig:Vphi_char</span>}, and the data acquired, we can find that <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>$</span> I = 20.2987<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'>$</span>A corresponds to a single flux of quanta. This is an important parameter that would be used to find mutual inductance of the circuit. For the circuit, the mutual inductance is given by:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> M = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}}{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> I}</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+where <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\phi</span><span style='color:#ff5500;'>_{0}$</span>( = 2.07 x 10 <span style='color:#ff5500;'>$^{-15}$</span> Wb) is the magnetic flux quantum. Thus, the mutual inductance is:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> M = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{2.07 * 10^{-15}}{20.2987}  F = 50.9885 pF </span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> M}{M} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>( </span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> I)}{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> I}</span>
+<span style='color:#ff5500;'>$$</span>
+
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> M = 0.7419 pF</span>
+<span style='color:#ff5500;'>$$</span>
+Thus, M = 50.9885 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.7419 pF.
+<b>\subsubsection</b>{<b>Shapiro steps</b>}
+For two steps, we have the following equation to get the <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h}$</span> value:
+<b>\begin</b>{<span style='color:#0095ff;'>equation</span>}
+<span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h} = (</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\upsilon</span><span style='color:#ff5500;'>_{mw}}{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> V_{0}})</span>
+<b>\end</b>{<span style='color:#0095ff;'>equation</span>}
+From fig <b>\ref</b>{<span style='color:#0095ff;'>fig:Shapiro</span>}, <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> V_{0}$</span> = 0.4343 mV. The frquency of the wave generator was found to be 9.75 GHz <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.25 GHz e. Using this in equation 57, we get:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h} =  2.2449 * 10^{14}Hz/Volts</span>
+<span style='color:#ff5500;'>$$</span>
+The error can be calculated using error in the frequency measurement.
+Thus, we have:
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>(</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h})/{</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h}} = </span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> </span><span style='color:#3daee9;'>\upsilon</span><span style='color:#ff5500;'>_{mw}}{</span><span style='color:#3daee9;'>\upsilon</span><span style='color:#ff5500;'>_{mw}}}</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'>({</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h}}) = 0.0575 * 10^{14}Hz/Volts</span>
+<span style='color:#ff5500;'>$$</span>
+Hence, we have:
+<span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h}$</span> = 2.2449 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.0575 x 10<span style='color:#ff5500;'>$^{14}$</span> Hz/Volts.
+This is off by theoretical value of <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h}$</span> by 7.05<span style='color:#644a9b;'>\%</span>. This is within the permissible limits.
+<b>\subsubsection</b>{<b>Transition temperature of YBCO</b>}
+For finding the transition temperature, we used the calibration curve to get the temperature values. The error in the calculation of transition temperature is related to the error in the slope of the temperature calibration along with error in impedance. Through observation, the change in the impedance was found for T = 92.7944 K. Thus, <span style='color:#ff5500;'>$T_{c}$</span> = 92.7944 K. 
+
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> T{c}}{T_{c}} = </span><span style='color:#3daee9;'>\sqrt</span><span style='color:#ff5500;'>{(</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> m}{m})^{2} + (</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> I}{I})^{2}}</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>$$</span>
+<span style='color:#ff5500;'>=0.0630</span>
+<span style='color:#ff5500;'>$$</span>
+where I is the impedance and m is the slope of the calibration curve <b>\ref</b>{<span style='color:#0095ff;'>fig:calibration</span>}
+Thus, we get <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Delta</span><span style='color:#ff5500;'> T_{c}$</span> = 5.846 K
+Thus, the final value of critical temperature is T<span style='color:#ff5500;'>$_{c}$</span> = 92.7944 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 5.846 K.
+<span style='color:#898887;'>%------------------------------------------------</span>
+
+
+
+<b>\section</b>{<b>Results</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>itemize</span>}
+ <span style='color:#644a9b;'>\item</span> R<span style='color:#ff5500;'>$_{c}$</span> = 1.174 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 1.6806 x 10<span style='color:#ff5500;'>$^{-4}$</span> <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\Omega</span><span style='color:#ff5500;'>$</span>.
+ <span style='color:#644a9b;'>\item</span> I<span style='color:#ff5500;'>$_{c}$</span> = 38.65 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\mu</span><span style='color:#ff5500;'>$</span>A
+ <span style='color:#644a9b;'>\item</span> <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\beta</span><span style='color:#ff5500;'>_{L}$</span> = 8.562 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.002.
+ <span style='color:#644a9b;'>\item</span> M = 50.9885 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.7419 pF.
+ <span style='color:#644a9b;'>\item</span> <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\frac</span><span style='color:#ff5500;'>{e}{h}$</span> = 2.2449 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 0.0575 x 10<span style='color:#ff5500;'>$^{14}$</span> Hz/Volts.
+ <span style='color:#644a9b;'>\item</span> T<span style='color:#ff5500;'>$_{c}$</span> = 92.7944 <span style='color:#ff5500;'>$</span><span style='color:#3daee9;'>\pm</span><span style='color:#ff5500;'>$</span> 5.846 K.
+<b>\end</b>{<span style='color:#0095ff;'>itemize</span>}
+
+<b>\section</b>{<b>conclusion</b>}
+The YBCO based SQUID chip is useful was used to understand the various concepts of superconductivity. Various experiments based on superconductivity were performed. The experiment helped us to get familiarized with SQUID, super conductivity and usage of instruments to set up experiments. Overall, the basics of these topics were studied and understood thoroughly along with exposure to Xspise.<span style='color:#644a9b;'>\\</span>
+We learned about the direct manifestation of numerous macroscopic (superconductivity) and microscopic (interference) quantum phenomena through this experiment. SQUID demonstrated the actual appearance of interference of wave-forms, whereas su perconductors had provided us with a steady wave function in each electrode. Through an uncalibrated temperature sensor, we looked at the transport characteristics of SQUID and how they relate to superconducting transitions. It was highly challenging to calibrate the system in different temperature ranges due to the system's sensitivity to even the smallest movement caused by the small quantity of electricity. The magnetic response demonstrated why SQUIDs are so magnetically sensitive to the order of 1 fluxon. We were successful in demonstrating the steps in the Shapiro steps experiment as well as how these steps alter with frequency. By doing this, we have established that the GHz frequencies alone were what caused the step-like properties. We found the values of the constants achieved were in the acceptable limits of errors and the overall, the experiment was concluded successfuly.
+
+<span style='color:#898887;'>%------------------------------------------------</span>
+<span style='color:#898887;'>% </span>
+<span style='color:#898887;'>% \phantomsection</span>
+<span style='color:#898887;'>% \section*{Acknowledgments} % The \section*{} command stops section numbering</span>
+<span style='color:#898887;'>% </span>
+<span style='color:#898887;'>% \addcontentsline{toc}{section}{Acknowledgments} % Adds this section to the table of contents</span>
+<span style='color:#898887;'>% </span>
+<span style='color:#898887;'>% So long and thanks for all the fish \cite{Figueredo:2009dg, Smith:2012qr}.</span>
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<span style='color:#898887;'>%	REFERENCE LIST</span>
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+
+
+<b>\section</b>{<b>References</b>}
+[Luke] Lukefahr, H. G., Priest, V., St. Jean, K. B., Worley, J. S. R., Yeager, C. S., Gajewski, D. A., and Maple, M. B. (1997). A very simple and inexpensive apparatus for detecting superconducting transitions via magnetic screening. In American Journal of Physics (Vol. 65, Issue 2, pp. 132-135). American Association of Physics Teachers (AAPT). https://doi.org/10.1119/1.18525.<span style='color:#644a9b;'>\\</span>
+
+<span style='color:#644a9b;'>\noindent</span> [Hale] Haleeda, Nur and Awang Kechik, M. and Abd-Shukor, R.. (2016). PJSRR (2016) 2(1): Effect of Yb2O3 Nanoparticle Addition on Superconducting Properties of BSCCO (2223)/Ag Tapes by Acetate Precipitation Method. Pertanika Journal of Science and Technology.<span style='color:#644a9b;'>\\</span>
+
+<span style='color:#644a9b;'>\noindent</span> [Soha] Sohail, Emaan and Shiraz Ahmad, Muhammad and Anwar, Sabieh. (2019). Experimental Analysis of Superconductivity and Quantum Interference. <span style='color:#644a9b;'>\\</span>
+
+<span style='color:#644a9b;'>\noindent</span> [STAR] Mr.SQUID Operational manual by STAR cryoelectronics.<span style='color:#644a9b;'>\\</span>
+
+<span style='color:#644a9b;'>\noindent</span> [Kita] Kita, Takafumi. (2015). BCS Theory. 10.1007/978-4-431-55405-99.<span style='color:#644a9b;'>\\</span>
+
+<span style='color:#644a9b;'>\noindent</span> [Kite] Kittel, C. (1996) Introduction to Solid State Physics. 7th Edition, John and Wiley, New York, 117-126.<span style='color:#644a9b;'>\\</span>
+
+<span style='color:#644a9b;'>\noindent</span> [Cryo] Cyrot, M. (1973). Ginzburg-Landau theory for superconductors. In Reports on Progress in Physics (Vol. 36, Issue 2, pp. 103-158). IOP Publishing. https://doi.org/10.1088/0034-4885/36/2/001
+<span style='color:#898887;'>% \phantomsection</span>
+<span style='color:#898887;'>% \bibliographystyle{unsrt}</span>
+<span style='color:#898887;'>% \bibliography{sample.bib}</span>
+
+<span style='color:#898887;'>%----------------------------------------------------------------------------------------</span>
+<b>\section</b>{<b>Appendix</b>}
+<b>\subsection</b>{<b>Klystron wave generator</b>}
+The klystron's anode is a resonant cavity with perforated grids that allow accelerated electrons to pass through and continue travelling. However, a positive electrode does not go on to capture those electrons. Instead, they are forced to fall back into the cavity grids by a negatively polarised &quot;reflector&quot; as a result. The tube's operating goal is to have these electrons return to the cavity grids at precisely the right moment to strengthen the electric oscillatory field that is already present across these grids. Oscillations in the cavity are stimulated and sustained when this circumstance exists. If coaxial cable is utilised, microwave power is coupled out of the cavity by way of a loop; if a waveguide is used to transmit the power to the load, microwave power is simply coupled out of the cavity through an appropriate aperture. The spent electrons fall back to the positively biassed control grid where they are collected, adding to the control grid current after the electrons' kinetic energy has been given up to the oscillatory field of the cavity. When the tube is not oscillating, a significant amount of electrons are deflected by the reflector's retarding field with enough energy to travel through the cavity grids and subsequently be captured by the control grid. The oscillating electric field that appears across the cavity grids, nevertheless, absorbs most of the energy from falling electrons when oscillations are sustained in the cavity. Such electrons are then captured by the cavity grids, which serve as the equivalent of the diode's plate in this context.
+<b>\subsection</b>{<b>Frequency meter</b>}
+<b>\begin</b>{<span style='color:#0095ff;'>figure</span>}[h!]
+<span style='color:#644a9b;'>\centering</span>
+<b><span style='color:#644a9b;'>\includegraphics</span></b>[scale=0.19]{<span style='color:#0095ff;'>wavemeter.jpg</span>}
+<span style='color:#644a9b;'>\caption</span>{Setup of frequency meter}
+<b>\label</b>{<span style='color:#0095ff;'>meter</span>}
+<b>\end</b>{<span style='color:#0095ff;'>figure</span>}
+
+<span style='color:#644a9b;'>\noindent</span> The principle of electromagnetic wave resonance inside a closed cavity governs the operation of a frequency metre cavity, also referred to as a microwave resonator. It is frequently employed for accurate radio frequency and microwave measurements. The cavity is filled with a sample of the signal that has to be measured, as shown in fig <b>\ref</b>{<span style='color:#0095ff;'>meter</span>}. By altering its dimensions, the cavity is brought into resonance at a particular frequency. The electromagnetic field inside the cavity is enhanced when the signal's frequency coincides with the cavity's resonant frequency, which results in a drop in output power. The position of the dip can be measured to identify the resonant frequency, which enables precise frequency monitoring of the input signal.
+<b>\subsection</b>{<b>Seelab</b>}
+Several physical parameters, including as voltage, current, frequency, resistance, capacitance, and inductance, can be measured using SEELab 3.0. Additionally, it may be used to create waveforms, manage other devices like motors, and communicate with I2C and SPI modules. It comprises of a main board with a built-in breadboard slot and a 40-pin connector. This makes it simple for users to connect and test out a range of sensors and modules. It can be used to perform a wide range of experiments, from simple circuit measurements to complex data analysis. SEELab 3.0 is also a great tool for troubleshooting and development. It can be used to debug circuits, test components, and prototype new designs.
+
+
+
+
+<span style='color:#898887;'>%-----------------------------------------------</span>
+<b>\end</b>{<span style='color:#0095ff;'>document</span>}
+</pre>
+</body>
+</html>
