@@ -22,6 +22,47 @@
   box-sizing: border-box;
 }
 
+
+
+
+body {
+  background-color: #fdfdfd;
+  font-family: 'EB Garamond', serif;
+  color: #1b1b1b;
+}
+
+#wrapper {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  box-shadow: 0 0 8px rgba(0,0,0,0.05);
+  padding: 20px;
+}
+
+#wrapper #navigation a {
+  font-family: 'Fira Mono', monospace;
+  color: #3f3f3f;
+  padding: 0 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+#wrapper #navigation a:hover {
+  color: #0077cc;
+}
+
+aside h3 {
+  font-family: 'Fira Mono', monospace;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
 body {
   background-color: var(--main-bg);
   color: var(--text-color);
