@@ -1,96 +1,126 @@
 @charset "utf-8";
-* {
-	margin: 0px;
-	padding: 0px;
-	left: auto;
-	right: auto;
+
+/* ==== Google Fonts Import ==== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap');
+
+/* ==== Root Theme Variables ==== */
+:root {
+  --main-bg: #f4f0ff;
+  --accent-bg: #fff8e1;
+  --text-color: #1a1a1a;
+  --accent-color: #6a1b9a;
+  --hover-color: #9575cd;
+  --border-color: #ccc;
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Roboto', sans-serif;
 }
-#wrapper #graphsimage {
-	margin-top: 10px;
-	margin-right: auto;
-	margin-bottom: 10px;
-	margin-left: auto;
-	height: 355px;
-	width: 800px;
-	background-image: url(../images/graphs.png);
+
+/* ==== Reset and Base ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--main-bg);
+  color: var(--text-color);
+  font-family: var(--font-body);
+  line-height: 1.6;
 }
 
 #wrapper {
-	background-color: #e3d7fa;
-	width: auto;
-	margin-right: 20px;
-	margin-left: 20px;
-	height: auto;
-	border-right-width: 1px;
-	border-right-style: solid;
-	border-left-style: solid;
-	border-left-width: 1px;
-	border-right-color: #999;
-	border-left-color: #999;
-	margin-top: 10px;
-	margin-bottom: auto;	
-	font-family: verdana, times;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border-left: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-#wrapper #bodyArea{
-    height: auto;
-	width: auto;
-	margin-right: 20px;
-	margin-left: 20px;
-}
-
-#wrapper #bodyArea #left {
-	width: 580px;
-	margin-right: auto;
-	margin-left: 10px;
-	float: left;
-	height: auto;
-	margin-top: 50px;
-	font-size: 16px;
-	color: #000;
-}
-#wrapper #bodyArea #right {
-	width: 380px;
-	margin-right: 10px;
-	margin-left: auto;
-	float: right;
-	height: 220px;
-	margin-top: 50px;
-	background-color: #FFC;
-	font-size: 16px;
-}
-p {
-	margin: 10px;
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	color: #000;
-}
+/* ==== Title Area ==== */
 #wrapper #title {
-	font-size: 24px;
-	height: 50px;
-	margin-right: auto;
-	margin-left: 20px;
-	font-family: Verdana, Geneva, sans-serif;
-	font-style: normal;
-	clip: rect(auto,auto,auto,auto);
-	left: auto;
-	right: auto;
-	color: #000;
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  margin: 20px;
+  color: var(--accent-color);
 }
+
+/* ==== Navigation ==== */
 #wrapper #navigation {
-	width: auto;
-	height: 40px;
-	font-family: "Times New Roman", Times, serif;
-	font-style: normal;
-	font-weight: bold;
-	margin-left: 20px;
-	margin-right: 20px;
+  display: flex;
+  gap: 20px;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
 }
+
+#wrapper #navigation a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: color 0.3s;
+}
+
+#wrapper #navigation a:hover {
+  color: var(--hover-color);
+}
+
+/* ==== Graphs Image Box ==== */
+#wrapper #graphsimage {
+  height: 355px;
+  width: 800px;
+  margin: 20px auto;
+  background-image: url(../images/graphs.png);
+  background-size: cover;
+  background-position: center;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+}
+
+/* ==== Body Area ==== */
+#wrapper #bodyArea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ==== Left (Main Content) ==== */
+#wrapper #bodyArea #left {
+  flex: 1 1 60%;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+/* ==== Right (Sidebar) ==== */
+#wrapper #bodyArea #right {
+  flex: 1 1 35%;
+  background-color: var(--accent-bg);
+  font-size: 1rem;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+}
+
+/* ==== Paragraphs ==== */
+p {
+  margin-bottom: 1em;
+  color: var(--text-color);
+}
+
+/* ==== Lists ==== */
 ul {
-	margin-right: 20px;
-	margin-left: 40px;
+  padding-left: 40px;
+  margin: 10px 0;
 }
 
+/* ==== Responsive ==== */
+@media (max-width: 768px) {
+  #wrapper #graphsimage {
+    width: 100%;
+    height: 220px;
+  }
 
+  #wrapper #bo
