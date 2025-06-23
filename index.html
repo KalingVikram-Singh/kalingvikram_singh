@@ -1,90 +1,71 @@
-
-<!DOCTYPE html >
-
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kaling Vikram Singh</title>
-  <style type="text/css">
-    body {
-      background-color: #666666;
-    }
-  </style>
-  <link href="css/Layout.css" rel="stylesheet" type="text/css" />
-  <style type="text/css">
-    a:link {
-      text-decoration: none;
-    }
-    a:visited {
-	  text-decoration: none;
-    }
-    a:hover {
-      text-decoration: none;
-    }
-    a:active {
-      text-decoration: none;
-      color: #FF0000;
-    }
-    body,td,th {
-      color: #000000;
-    }
-  </style>
+  <link rel="stylesheet" href="css/Layout.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div id="wrapper">
-    <div id="navigation">
-      <a href="index.html">Home</a> |  
-      <a href="blog.html">Blog</a> | 
+    
+    <!-- Navigation -->
+    <nav id="navigation">
+      <a href="index.html">Home</a>  
+      <a href="blog.html">Blog</a>  
       <a href="Misc.html">Misc</a>
-      <hr /><hr />
-    </div>
-    <div id="title">Kaling Vikram Singh</div>  
-    <div id="bodyArea">
-      <table border="0" cellpadding="10" cellspacing="20">
-        <tr>
-          <td>
-            <img src="image/myself.jpeg" alt="myself" width="200">
-          </td>
-          <td>
-            <a href="http://www.niser.ac.in/" target="new">  
-            National Institute of Science Education and Research</a> Bhubaneswar<br>
-            P.O. Jatni, Khurda 752050, Odisha, India<br>
-            Email: kalingvikram.singh@outlook.com<br>
-          </td>
-        </tr>
-      </table>
-      <p> I am a final year masters student at NISER with major in Physics along with a minor 
-      in computer sciences. I have a keen interest in material sciences at nano scales and also love to study fluid dynamics and chaos. 
-	I am guided by <a href=" https://sites.google.com/niser.ac.in/superconductivity-lab" target = "new>"> Dr. Kartikeswar Senapati</a>, Associate Professor at NISER in fabricating 2D Van Der Waal structure devices to study basic properties of matter. We focus on superconductivity and magnetism.
-	      I also love studying computer sciences and have knowledge of algorithms (randomised, parametrized) and I also do coding in python. I also have taken up courses in machine learning. </p>
+    </nav>
+    <hr /><hr />
+
+    <!-- Title -->
+    <header id="title">Kaling Vikram Singh</header>
+
+    <!-- Body -->
+    <section id="bodyArea">
       
-      <p>I do research on 2D materials, superconductivity and magnetism and I pretty much love it. </p>
-      
-      <p>Here is my updated (November 2024) <a href="files/cv.pdf" target="new">Curriculum Vitae</a>.</p>
+      <!-- Profile Intro -->
+      <div id="left">
+        <img src="image/myself.jpeg" alt="Kaling Vikram Singh" width="200" style="float: left; margin-right: 20px; border-radius: 8px;" />
+        <p>
+          <a href="http://www.niser.ac.in/" target="_blank">National Institute of Science Education and Research</a> Bhubaneswar<br>
+          P.O. Jatni, Khurda 752050, Odisha, India<br>
+          Email: <a href="mailto:kalingvikram.singh@outlook.com">kalingvikram.singh@outlook.com</a>
+        </p>
 
-      <hr>
-<p><strong>Snippets from my research </strong></p>
-	    
+        <p>
+          I am a final year master's student at NISER majoring in Physics with a minor in Computer Science.
+          I have a deep interest in material science at the nanoscale, fluid dynamics, and chaos theory.  
+          I work with <a href="https://sites.google.com/niser.ac.in/superconductivity-lab" target="_blank">Dr. Kartikeswar Senapati</a>,
+          focusing on 2D Van der Waals heterostructures to study superconductivity and magnetism.
+        </p>
 
-	    
-      <p><strong>Research Projects </strong></p>
-      <ul>
-        <li><em><a href="files/IIT_report.pdf" target ="_blank">Anti corrosive coatings on copper substrates </a></em></li>
-        <li><em><a href="files/Final report.pdf" target="_blank">Multisize PLGA encapsulated nanoparticles production via microfluidics</a></em></li>
-        <li><em><a href="files/Paper___CS460_Kaling_Sunil___Perovskites_.pdf" target="_blank">Crystal structure prediction of perovskites using  machine learning</a></em></li>
-	<li><em><a href="files/article_3.pdf" target="_blank">Experiments through SQUID and critical temperatures</a></em></li>
-	<li><em><a href="files/phase.pdf" target="_blank">Phase transition of chromium using strain Gauge</a></em></li>
-	<li><em><a href="files/elec.pdf" target="_blank">Electron diffraction studies</a></em></li>
-      </ul> 
-      <br>
-      <hr>
+        <p>
+          I'm also passionate about computer science—particularly algorithms and machine learning. I code primarily in Python and have explored both randomized and parameterized algorithmic strategies.
+        </p>
 
-      <p><stron
-      <p>last modified: November, 2024</p>
-    </div>
+        <p>Here is my updated (November 2024) <a href="files/cv.pdf" target="_blank">Curriculum Vitae (CV)</a>.</p>
+      </div>
+
+      <!-- Sidebar -->
+      <aside id="right">
+        <p><strong>Snippets from my research</strong></p>
+
+        <p><strong>Research Projects</strong></p>
+        <ul>
+          <li><a href="files/IIT_report.pdf" target="_blank">Anti-corrosive coatings on copper substrates</a></li>
+          <li><a href="files/Final report.pdf" target="_blank">Multisize PLGA nanoparticles via microfluidics</a></li>
+          <li><a href="files/Paper___CS460_Kaling_Sunil___Perovskites_.pdf" target="_blank">Crystal structure prediction of perovskites with ML</a></li>
+          <li><a href="files/article_3.pdf" target="_blank">SQUID experiments & critical temperatures</a></li>
+          <li><a href="files/phase.pdf" target="_blank">Strain gauge–based chromium phase transition</a></li>
+          <li><a href="files/elec.pdf" target="_blank">Electron diffraction studies</a></li>
+        </ul>
+
+        <p><small>Last modified: November 2024</small></p>
+      </aside>
+
+    </section>
   </div>
 </body>
 </html>
-
-
