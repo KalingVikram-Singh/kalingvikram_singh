@@ -9,30 +9,30 @@
     body {
       font-family: 'Roboto', sans-serif;
       background-color: #f8f9fa;
-      color: #333;
       margin: 0;
       padding: 0;
+      color: #222;
     }
     header {
-      background: #0d6efd;
+      background: #0077cc;
       color: white;
       text-align: center;
       padding: 2rem 1rem;
     }
     main {
-      max-width: 1000px;
+      max-width: 960px;
       margin: auto;
       padding: 2rem;
       background: white;
     }
     h1, h2, h3 {
-      color: #0d6efd;
+      color: #0077cc;
     }
     ul {
       padding-left: 1.5rem;
     }
     li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
     .figure {
       text-align: center;
@@ -41,8 +41,8 @@
     .figure img {
       max-width: 100%;
       height: auto;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+      border: 1px solid #ddd;
+      border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     figcaption {
@@ -52,17 +52,18 @@
       margin-top: 0.5rem;
     }
     .code-block {
-      background: #f0f0f0;
-      border-left: 4px solid #0d6efd;
+      background: #f4f4f4;
       padding: 1rem;
       font-family: monospace;
       overflow-x: auto;
-      white-space: pre-wrap;
+      white-space: pre;
+      border-left: 4px solid #0077cc;
+      margin-bottom: 2rem;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 1rem;
+      margin: 1rem 0;
     }
     table, th, td {
       border: 1px solid #ccc;
@@ -71,16 +72,13 @@
       padding: 0.75rem;
       text-align: left;
     }
-    a {
-      color: #0d6efd;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .important {
-      color: red;
-      font-weight: bold;
+    .warning {
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffeeba;
+      padding: 1rem;
+      margin: 2rem 0;
+      border-radius: 6px;
     }
   </style>
 </head>
@@ -88,138 +86,161 @@
 
 <header>
   <h1>DIY Arduino-Based Pressure Regulator</h1>
-  <p>Control gas flow automatically using BMP180, L298N and a solenoid valve</p>
+  <p>Using BMP180 + L298 Motor Driver + Solenoid Valve</p>
 </header>
 
 <main>
+
   <section>
-    <h2>Components Required</h2>
+    <h2>🧰 Required Components</h2>
     <ul>
-      <li><a href="https://robu.in/product/arduino-uno-r3/">Arduino Uno</a></li>
-      <li><a href="https://amzn.in/d/bEvsWri">L298N Motor Driver</a></li>
-      <li><a href="https://amzn.in/d/5KgvPuV">BMP180 Pressure Sensor</a></li>
-      <li><a href="https://robu.in/product/dc-12v-solenoid-valve-1-4-2-way-normally-closed-direct-pneumatic-valves-for-water-air-gas-hot/">12V Solenoid Valve (NC)</a></li>
-      <li><a href="https://amzn.in/d/dcFAOyV">Perfboard</a></li>
+      <li>Arduino Uno — <a href="https://robu.in/product/arduino-uno-r3/">Buy</a></li>
+      <li>L298N Motor Driver — <a href="https://amzn.in/d/bEvsWri">Buy</a></li>
+      <li>BMP180 Pressure Sensor — <a href="https://amzn.in/d/5KgvPuV">Buy</a></li>
+      <li>12V Solenoid Valve (Normally Closed) — <a href="https://robu.in/product/dc-12v-solenoid-valve-1-4-2-way-normally-closed-direct-pneumatic-valves-for-water-air-gas-hot/">Buy</a></li>
+      <li>Perfboard — <a href="https://amzn.in/d/dcFAOyV">Buy</a></li>
+      <li>Jumper wires, soldering iron, 12V adapter</li>
     </ul>
   </section>
 
   <section>
-    <h2>Wiring Diagram</h2>
+    <h2>🔌 How to Make the Connections</h2>
+    <p>Follow the steps below to assemble and connect the components:</p>
+    <ol>
+      <li>Connect the BMP180 to Arduino using I2C:</li>
+      <ul>
+        <li>SCL → A5</li>
+        <li>SDA → A4</li>
+        <li>VCC → 3.3V</li>
+        <li>GND → GND</li>
+      </ul>
+
+      <li>Connect L298N Motor Driver to Arduino:</li>
+      <ul>
+        <li>IN1 → D8</li>
+        <li>IN2 → D9</li>
+        <li>GND → Common ground</li>
+        <li>+12V → External Power Jack (do NOT connect to Arduino 5V)</li>
+        <li>OUT1/OUT2 → Solenoid Valve</li>
+      </ul>
+
+      <li>Connect a 12V Power Adapter to both:
+        <ul>
+          <li>Power jack → L298N +12V</li>
+          <li>Arduino can run from its own barrel jack (recommended)</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>📷 Wiring Diagrams</h2>
     <div class="figure">
-      <img src="image/Diagram.png" alt="Wiring Diagram" />
-      <figcaption>Figure 1: Circuit wiring using Fritzing for BMP180, Arduino, L298N, and solenoid.</figcaption>
+      <img src="image/Diagram.png" alt="Wiring diagram">
+      <figcaption>Figure 1: Fritzing diagram showing BMP180, L298N and solenoid valve setup.</figcaption>
+    </div>
+
+    <div class="figure">
+      <img src="image/FInal_2.png" alt="Final build on perfboard">
+      <figcaption>Figure 2: Top view of soldered perfboard circuit with L298N and power jack.</figcaption>
+    </div>
+
+    <div class="figure">
+      <img src="image/Pins.png" alt="Perfboard wiring details">
+      <figcaption>Figure 3: Bottom view showing wiring from perfboard to Arduino and L298N.</figcaption>
     </div>
   </section>
 
   <section>
-    <h2>L298N to Arduino Pin Mapping</h2>
+    <h2>📋 L298N to Arduino Pin Reference</h2>
     <table>
-      <thead>
-        <tr><th>L298N Pin</th><th>Connection</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>IN1</td><td>Arduino pin 8</td></tr>
-        <tr><td>IN2</td><td>Arduino pin 9</td></tr>
-        <tr><td>OUT1, OUT2</td><td>Solenoid Valve</td></tr>
-        <tr><td>+12V</td><td>External power jack</td></tr>
-        <tr><td>GND</td><td>Common ground with Arduino</td></tr>
-        <tr><td>5V</td><td><strong>Leave disconnected or use jumper cap if needed</strong></td></tr>
-      </tbody>
+      <tr><th>L298N Pin</th><th>Connection</th></tr>
+      <tr><td>IN1</td><td>Arduino D8</td></tr>
+      <tr><td>IN2</td><td>Arduino D9</td></tr>
+      <tr><td>OUT1</td><td>Solenoid Valve (+)</td></tr>
+      <tr><td>OUT2</td><td>Solenoid Valve (-)</td></tr>
+      <tr><td>+12V</td><td>External 12V Adapter</td></tr>
+      <tr><td>GND</td><td>Common Ground with Arduino</td></tr>
     </table>
   </section>
 
   <section>
-    <h2>Assembly on Perfboard</h2>
-    <div class="figure">
-      <img src="image/FInal_2.png" alt="Perfboard Top View" />
-      <figcaption>Figure 2: Top view of the final circuit on perfboard with power jack, L298, and solenoid.</figcaption>
-    </div>
-    <div class="figure">
-      <img src="image/Pins.png" alt="Perfboard Bottom View" />
-      <figcaption>Figure 3: Soldered connections under the perfboard showing pin mapping to Arduino and L298N.</figcaption>
-    </div>
-  </section>
-
-  <section>
-    <h2>Code: BMP180 Sensor Test</h2>
+    <h2>🧪 Step 1: Test BMP180 Sensor</h2>
     <div class="code-block">
-#include &lt;Wire.h&gt;
-#include &lt;Adafruit_BMP085.h&gt;
-
-Adafruit_BMP085 bmp;
-
-void setup() {
-  Serial.begin(115200);
-  Wire.begin();
-  if (!bmp.begin()) {
-    Serial.println("BMP180 not found. Please check wiring!");
-    while (1);
-  }
-  Serial.println("BMP180 Sensor Initialized.");
-}
-
-void loop() {
-  float pressure = bmp.readPressure();
-  float temperature = bmp.readTemperature();
-  Serial.print("Pressure: "); Serial.print(pressure); Serial.print(" Pa\t");
-  Serial.print("Temperature: "); Serial.print(temperature); Serial.println(" °C");
-  delay(1000);
+#include &lt;Wire.h&gt;<br>
+#include &lt;Adafruit_BMP085.h&gt;<br>
+<br>
+Adafruit_BMP085 bmp;<br>
+<br>
+void setup() {<br>
+  Serial.begin(115200);<br>
+  Wire.begin();<br>
+  if (!bmp.begin()) {<br>
+    Serial.println("BMP180 not found. Please check wiring!");<br>
+    while (1);<br>
+  }<br>
+  Serial.println("BMP180 Sensor Initialized.");<br>
+}<br>
+<br>
+void loop() {<br>
+  float pressure = bmp.readPressure();<br>
+  float temperature = bmp.readTemperature();<br>
+  Serial.print("Pressure: "); Serial.print(pressure); Serial.print(" Pa\t");<br>
+  Serial.print("Temperature: "); Serial.println(temperature);<br>
+  delay(1000);<br>
 }
     </div>
   </section>
 
   <section>
-    <h2>Code: Pressure Regulator</h2>
+    <h2>🚦 Step 2: Final Pressure Control Code</h2>
     <div class="code-block">
-#include &lt;Wire.h&gt;
-#include &lt;Adafruit_BMP085.h&gt;
-
-#define IN1 8
-#define IN2 9
-#define PRESSURE_THRESHOLD 99780
-
-Adafruit_BMP085 bmp;
-
-void setup() {
-  Serial.begin(115200);
-  Wire.begin();
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);
-
-  if (!bmp.begin()) {
-    Serial.println("BMP180 not found. Check wiring.");
-    while (1);
-  }
-  Serial.println("System Initialized.");
-}
-
-void loop() {
-  float pressure = bmp.readPressure();
-  float temperature = bmp.readTemperature();
-
-  Serial.print("Pressure: "); Serial.print(pressure); Serial.print(" Pa\t");
-  Serial.print("Temperature: "); Serial.print(temperature); Serial.print(" °C\t");
-
-  if (pressure &lt; PRESSURE_THRESHOLD) {
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, LOW);
-    Serial.println("Valve: OPEN");
-  } else {
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, LOW);
-    Serial.println("Valve: CLOSED");
-  }
-  delay(1000);
+#include &lt;Wire.h&gt;<br>
+#include &lt;Adafruit_BMP085.h&gt;<br>
+#define IN1 8<br>
+#define IN2 9<br>
+#define PRESSURE_THRESHOLD 99780<br>
+<br>
+Adafruit_BMP085 bmp;<br>
+<br>
+void setup() {<br>
+  Serial.begin(115200);<br>
+  Wire.begin();<br>
+  pinMode(IN1, OUTPUT);<br>
+  pinMode(IN2, OUTPUT);<br>
+  digitalWrite(IN1, LOW);<br>
+  digitalWrite(IN2, LOW);<br>
+  if (!bmp.begin()) {<br>
+    Serial.println("BMP180 not found. Check wiring.");<br>
+    while (1);<br>
+  }<br>
+  Serial.println("System Initialized.");<br>
+}<br>
+<br>
+void loop() {<br>
+  float pressure = bmp.readPressure();<br>
+  float temperature = bmp.readTemperature();<br>
+  Serial.print("Pressure: "); Serial.print(pressure); Serial.print(" Pa\t");<br>
+  Serial.print("Temperature: "); Serial.print(temperature); Serial.print(" °C\t");<br>
+<br>
+  if (pressure &lt; PRESSURE_THRESHOLD) {<br>
+    digitalWrite(IN1, HIGH);<br>
+    digitalWrite(IN2, LOW);<br>
+    Serial.println("Valve: OPEN");<br>
+  } else {<br>
+    digitalWrite(IN1, LOW);<br>
+    digitalWrite(IN2, LOW);<br>
+    Serial.println("Valve: CLOSED");<br>
+  }<br>
+  delay(1000);<br>
 }
     </div>
   </section>
 
-  <section>
-    <p class="important">⚠️ Important: Never connect 12V directly to the Arduino. Use external power supply only for the motor driver. Connect GNDs together.</p>
-  </section>
+  <div class="warning">
+    ⚠️ <strong>Important:</strong> Never connect the 12V line directly to the Arduino. Only power the L298N with 12V, and ensure a common ground is shared.
+  </div>
+
 </main>
-
 </body>
 </html>
