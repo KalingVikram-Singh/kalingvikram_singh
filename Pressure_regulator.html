@@ -1,221 +1,218 @@
-<!DOCTYPE html> 
-<html lang='en-US' xml:lang='en-US'> 
-<head><title>DIY Arduino Based Pressure Regulator</title> 
-<meta charset='utf-8' /> 
-<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
-<meta content='width=device-width,initial-scale=1' name='viewport' /> 
-<link href='main.css' rel='stylesheet' type='text/css' /> 
-<meta content='main.tex' name='src' /> 
-<script>window.MathJax = { tex: { tags: "ams", }, }; </script> 
-<script async='async' id='MathJax-script' src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js' type='text/javascript'></script>  
-</head><body>
-   <div class='maketitle'>
-                                                                                         
-                                                                                         
-                                                                                         
-                                                                                         
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIY Arduino-Based Pressure Regulator</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: #212529;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      max-width: 960px;
+      margin: auto;
+      padding: 2rem;
+      background: white;
+    }
+    h1, h2, h3 {
+      color: #0077b6;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    section {
+      margin-bottom: 2rem;
+    }
+    .figure {
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+    figcaption {
+      font-style: italic;
+      margin-top: 0.5rem;
+      color: #555;
+    }
+    .code-block {
+      background: #f1f1f1;
+      border-left: 5px solid #0077b6;
+      padding: 1rem;
+      font-family: monospace;
+      overflow-x: auto;
+    }
+    a {
+      color: #0077b6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .important {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
 
-<h2 class='titleHead'>DIY Arduino Based Pressure Regulator</h2>
- <div class='author'></div><br />
-<div class='date'></div>
-   </div>
-   
-   <h3 class='likesectionHead' id='pressure-regulator-for-inhouse-glove-box'><a id='x1-1000'></a>Pressure Regulator for inhouse Glove box</h3>
-<!-- l. 46 --><p class='noindent'>We would require 5 components: </p>
-      <ul class='itemize1'>
-      <li class='itemize'>Arduino Uno
-      </li>
-      <li class='itemize'>L298 motor driver
-      </li>
-      <li class='itemize'>BMP 180 pressure sensor
-      </li>
-      <li class='itemize'>12V Solenoid Valve (Normally Closed)
-      </li>
-      <li class='itemize'>Perfboard</li></ul>
-<!-- l. 55 --><p class='noindent'>These 5 components along with some jumper wires, soldering iron, power adapter are required for
-the regulator to work. We firstly, make a circuit to check the connections for the BMP 180
-pressure sensor by connecting it on a breadboard and making the required connection
-(A5-SCL), (A4-SDA), Gnd and 3.3V pins. Run the Arduino IDE, copy and paste the
-BMP180 code, followed by uploading it to the Uno and check the sensor (make sure that
-                                                                                         
-                                                                                         
-the BMP 180 library is installed in the IDE). It shall show pressure and temperature
-readings.<br class='newline' />
-</p>
-   <figure class='figure' id='x1-10011'><span id='circuit-diagram'></span> 
+<header>
+  <h1>DIY Arduino-Based Pressure Regulator</h1>
+  <p>Automated control for glove boxes using BMP180 and solenoid valve</p>
+</header>
 
-                                                                                         
-                                                                                         
+<main>
 
-                                                                                         
-                                                                                         
-<!-- l. 59 --><p class='noindent'><img alt='PIC' height='469' src='image/Diagram.png' width='469' />
-</p>
-<figcaption class='caption'><span class='id'>Figure 1: </span><span class='content'>Circuit Diagram</span></figcaption><!-- tex4ht:label?: x1-10011  -->
-                                                                                         
-                                                                                         
-   </figure>
-   <figure class='figure' id='x1-10022'><span id='perfboard-to-uno'></span> 
+<section>
+  <h2>Components Required</h2>
+  <ul>
+    <li><a href="https://robu.in/product/arduino-uno-r3/">Arduino Uno</a></li>
+    <li><a href="https://amzn.in/d/bEvsWri">L298 Motor Driver</a></li>
+    <li><a href="https://amzn.in/d/5KgvPuV">BMP180 Pressure Sensor</a></li>
+    <li><a href="https://robu.in/product/dc-12v-solenoid-valve-1-4-2-way-normally-closed-direct-pneumatic-valves-for-water-air-gas-hot/">12V Solenoid Valve (Normally Closed)</a></li>
+    <li><a href="https://amzn.in/d/dcFAOyV">Perfboard</a></li>
+  </ul>
+</section>
 
-                                                                                         
-                                                                                         
+<section>
+  <h2>Setup Instructions</h2>
+  <p>Begin by connecting the BMP180 sensor to the Arduino on a breadboard:</p>
+  <ul>
+    <li>A5 → SCL</li>
+    <li>A4 → SDA</li>
+    <li>3.3V → VCC</li>
+    <li>GND → GND</li>
+  </ul>
+  <p>Install the BMP180 library in Arduino IDE and upload the sensor test code below.</p>
 
-                                                                                         
-                                                                                         
-<!-- l. 66 --><p class='noindent'><img alt='PIC' height='328' src='image/Pins.png' width='328' />
-</p>
-<figcaption class='caption'><span class='id'>Figure 2: </span><span class='content'>Perfboard to Uno</span></figcaption><!-- tex4ht:label?: x1-10022  -->
-                                                                                         
-                                                                                         
-   </figure>
-   <figure class='figure' id='x1-10033'><span id='final-setup'></span> 
+  <div class="figure">
+    <img src="image/Diagram.png" alt="Circuit Diagram">
+    <figcaption>Figure 1: Circuit Diagram</figcaption>
+  </div>
+</section>
 
-                                                                                         
-                                                                                         
+<section>
+  <h2>Perfboard Integration</h2>
+  <p>Use a perfboard to make the setup compact. Solder Berg pins aligned with the Arduino headers and connect the BMP180 and L298 driver via wires. Refer to the figure below.</p>
 
-                                                                                         
-                                                                                         
-<!-- l. 73 --><p class='noindent'><img alt='PIC' height='328' src='image/FInal_2.png' width='328' />
-</p>
-<figcaption class='caption'><span class='id'>Figure 3: </span><span class='content'>Final setup</span></figcaption><!-- tex4ht:label?: x1-10033  -->
-                                                                                         
-                                                                                         
-   </figure>
-<!-- l. 79 --><p class='noindent'>Secondly, the connections to the L298 motor driver are checked to make sure that all parts are
-working properly. Just add the necessary connections to the existing circuit. The connections are
-shown in fig <a href='#circuit-diagram'>1<!-- tex4ht:ref: Diagram  --></a>. (IN1 - 8), (IN2-9), Common Gnd and 12V supply. <span class='cmbx-12'>Do not connect the 12V line
-to the arduino, otherwise it will fry the circuit</span>. An external power adapter is needed to
-power this chip. Using power jack, make parallel connection to L298 and to the barrel jack of
-Arduino. Attach the solenoid valve on O1 and O2 of the L298 motor driver. Once the circuit
-is made, write the new code, given in Pressure Regulator to check the working. You
-can change the threshold pressure based on the pressure shown on the arduino in the
-”PRESSURE_THRESHOLD 99780” command, using which one can check if the valve is working.
-<br class='newline' />
-</p><!-- l. 81 --><p class='noindent'>Once all things are set, we require  <a href='https://amzn.in/d/dcFAOyV'>Perf Board</a> which is used as a shield/breadboard for Uno to
-make the circuit compact. Berg pins are soldered onto the Perf board, ensuring that the pins can
-be inserted into the female berg pins on the Uno board (Analog, Digital and Power pins). Once
-these are made, connect the BMP 180 to the Perf board on a female berg pin using wires, and
-make the required connections on the Uno board, through the Perf board, as shown in
-fig <a href='#perfboard-to-uno'>2<!-- tex4ht:ref: Perf  --></a>. Once this is done, check for the connections and whether the sensor is working
-properly.<br class='newline' />
-</p><!-- l. 83 --><p class='noindent'>The L298 chip has a big component (L298 driver), thus it has to be placed on top of the Perf
-Board. Using soldering iron, remove the IN1, IN2, IN3, and IN4 pins and replace them with Berg
-pins in opposite direction (it is better to remove all for structural stability of the board and also for
-future applications) so that it can be placed on top of the perfboard. This is the most tedious part.
-Once these are done, connect the berg pins to the Perf board and connect them to the Uno using
-wires and solder, as shown in fig <a href='#circuit-diagram'>1<!-- tex4ht:ref: Diagram  --></a>. You need to connect just IN1 - 8 and IN2 - <img alt='˜9' class='tilde' src='main0x.svg' /> and keep IN3,IN4
-floating. In case the pins go bad, you can replace the IN1 with IN3 and IN2 with IN4 pins,
-both in connection and in the code and change the solenoid valve to output 3 and 4.
-<br class='newline' />
-</p><!-- l. 85 --><p class='noindent'>Finally, connect the motor/ solenoid valve. Use the pressure regulator code to finalize the working.
-Remember to upload the codes on Arduino to make the chip work autonomously. The Arduino
-runs when powered by the adapter, without using the USB cable.<br class='newline' />
-</p><!-- l. 88 --><p class='noindent'>The links for the components are given: <br class='newline' /> <a href='https://amzn.in/d/dcFAOyV'>Perf Board</a><br class='newline' /> <a href='https://robu.in/product/arduino-uno-r3/'>Arduino</a><br class='newline' /> <a href='https://amzn.in/d/bEvsWri'>L298</a><br class='newline' /> <a href='https://robu.in/product/dc-12v-solenoid-valve-1-4-2-way-normally-closed-direct-pneumatic-valves-for-water-air-gas-hot/'>Solenoid Valve</a><br class='newline' /> <a href='https://amzn.in/d/5KgvPuV'>BMP 180</a><br class='newline' />
-</p><!-- l. 96 --><p class='indent'>
-                                                                                         
-                                                                                         
-</p>
-   <div class='tcolorbox tcolorbox' id='tcolobox-1'>     
-<div class='tcolorbox-title'>
-<!-- l. 139 --><p class='indent'>   BMP180 Code</p></div> 
-<div class='tcolorbox-content'><pre class='verbatim' id='verbatim-1'>
-#include &lt;Wire.h&gt;
-#include &lt;Adafruit_BMP085.h&gt;
+  <div class="figure">
+    <img src="image/Pins.png" alt="Perfboard connection to Arduino">
+    <figcaption>Figure 2: Perfboard to Uno</figcaption>
+  </div>
+</section>
 
-// Create BMP180 sensor object
-Adafruit_BMP085 bmp;
+<section>
+  <h2>Final Assembly</h2>
+  <p>Once all the connections are tested, solder IN1 and IN2 to Berg pins and insert the L298 driver onto the perfboard. Keep IN3 and IN4 floating unless needed. Connect the solenoid valve to outputs O1 and O2 of L298.</p>
+  
+  <div class="important">⚠️ Do not connect 12V directly to Arduino. Use external power for L298.</div>
 
-void setup() {
-  Serial.begin(115200);
-  Wire.begin();
+  <div class="figure">
+    <img src="image/FInal_2.png" alt="Final pressure regulator setup">
+    <figcaption>Figure 3: Final Setup</figcaption>
+  </div>
+</section>
 
-  // Initialize BMP180 sensor
-  if (!bmp.begin()) {
-    Serial.println("BMP180 not found. Please check wiring!");
-    while (1); // Halt if sensor not found
-  }
+<section>
+  <h2>Code: BMP180 Sensor Test</h2>
+  <div class="code-block">
+<pre>
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_BMP085.h&gt;
 
-  Serial.println("BMP180 Sensor Initialized.");
+Adafruit_BMP085 bmp;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+  if (!bmp.begin()) {
+    Serial.println("BMP180 not found. Please check wiring!");
+    while (1);
+  }
+  Serial.println("BMP180 Sensor Initialized.");
 }
 
-void loop() {
-  // Read pressure in Pascals
-  float pressure = bmp.readPressure();
-  // Read temperature in Celsius
-  float temperature = bmp.readTemperature();
-
-  // Display readings on Serial Monitor
-  Serial.print("Pressure: ");
-  Serial.print(pressure);
-  Serial.print(" Pa\t");
-
-  Serial.print("Temperature: ");
-  Serial.print(temperature);
-  Serial.println(" °C");
-
-  delay(1000); // Wait 1 second before next reading
+void loop() {
+  float pressure = bmp.readPressure();
+  float temperature = bmp.readTemperature();
+  Serial.print("Pressure: "); Serial.print(pressure); Serial.print(" Pa\t");
+  Serial.print("Temperature: "); Serial.print(temperature); Serial.println(" °C");
+  delay(1000);
 }
 </pre>
-<!-- l. 138 --><p class='nopar'></p> 
-</div> 
-</div>
-   <div class='tcolorbox tcolorbox' id='tcolobox-2'>     
-<div class='tcolorbox-title'>
-                                                                                         
-                                                                                         
-<!-- l. 192 --><p class='indent'>   Pressure Regulator</p></div> 
-<div class='tcolorbox-content'><pre class='verbatim' id='verbatim-2'>
-#include &lt;Wire.h&gt;
-#include &lt;Adafruit_BMP085.h&gt;
-#define IN1 8  // L298N control pin
-#define IN2 9
-#define PRESSURE_THRESHOLD 99780  // in Pascals
+  </div>
+</section>
 
-Adafruit_BMP085 bmp;
-void setup() {
-  Serial.begin(115200);
-  Wire.begin();
+<section>
+  <h2>Code: Pressure Regulator</h2>
+  <div class="code-block">
+<pre>
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_BMP085.h&gt;
 
-  pinMode(IN1, OUTPUT);
-  pinMode(IN2, OUTPUT);
-  digitalWrite(IN1, LOW);
-  digitalWrite(IN2, LOW);  // Solenoid initially OFF
+#define IN1 8
+#define IN2 9
+#define PRESSURE_THRESHOLD 99780
 
-  if (!bmp.begin()) {
-    Serial.println("BMP180 not found. Check wiring.");
-    while (1);
-  }
-  Serial.println("System Initialized.");
+Adafruit_BMP085 bmp;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+  pinMode(IN1, OUTPUT);
+  pinMode(IN2, OUTPUT);
+  digitalWrite(IN1, LOW);
+  digitalWrite(IN2, LOW);
+
+  if (!bmp.begin()) {
+    Serial.println("BMP180 not found. Check wiring.");
+    while (1);
+  }
+  Serial.println("System Initialized.");
 }
 
-void loop() {
-  float pressure = bmp.readPressure();  // in Pascals
-  float temperature = bmp.readTemperature();  // in °C
+void loop() {
+  float pressure = bmp.readPressure();
+  float temperature = bmp.readTemperature();
 
-  Serial.print("Pressure: ");
-  Serial.print(pressure);
-  Serial.print(" Pa\t");
-  Serial.print("Temperature: ");
-  Serial.print(temperature);
-  Serial.print(" °C\t");
-  // Control solenoid based on pressure
-  if (pressure &lt; PRESSURE_THRESHOLD) {
-    digitalWrite(IN1, HIGH);
-    digitalWrite(IN2, LOW);  // Valve ON
-    Serial.println("Valve: OPEN");
-  } else {
-    digitalWrite(IN1, LOW);
-    digitalWrite(IN2, LOW);  // Valve OFF
-    Serial.println("Valve: CLOSED");
-  }
-  delay(1000);
+  Serial.print("Pressure: "); Serial.print(pressure); Serial.print(" Pa\t");
+  Serial.print("Temperature: "); Serial.print(temperature); Serial.print(" °C\t");
+
+  if (pressure &lt; PRESSURE_THRESHOLD) {
+    digitalWrite(IN1, HIGH);
+    digitalWrite(IN2, LOW);
+    Serial.println("Valve: OPEN");
+  } else {
+    digitalWrite(IN1, LOW);
+    digitalWrite(IN2, LOW);
+    Serial.println("Valve: CLOSED");
+  }
+  delay(1000);
 }
-
 </pre>
-<!-- l. 191 --><p class='nopar'></p> 
-</div> 
-</div>                                                                    
-                                                                                         
-    
-</body> 
+  </div>
+</section>
+
+</main>
+</body>
 </html>
