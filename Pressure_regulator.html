@@ -1,42 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DIY Arduino-Based Pressure Regulator</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
       background-color: #f8f9fa;
       color: #333;
+      margin: 0;
+      padding: 0;
     }
     header {
-      background: #212529;
+      background: #0d6efd;
       color: white;
-      padding: 1rem;
       text-align: center;
+      padding: 2rem 1rem;
     }
     main {
-      max-width: 960px;
+      max-width: 1000px;
       margin: auto;
       padding: 2rem;
       background: white;
     }
     h1, h2, h3 {
-      color: #0077b6;
+      color: #0d6efd;
     }
     ul {
       padding-left: 1.5rem;
     }
     li {
       margin-bottom: 0.5rem;
-    }
-    section {
-      margin-bottom: 2rem;
     }
     .figure {
       text-align: center;
@@ -46,22 +42,37 @@
       max-width: 100%;
       height: auto;
       border-radius: 6px;
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     figcaption {
       font-style: italic;
-      margin-top: 0.5rem;
+      font-size: 0.95rem;
       color: #555;
+      margin-top: 0.5rem;
     }
     .code-block {
-      background: #f1f1f1;
-      border-left: 5px solid #0077b6;
+      background: #f0f0f0;
+      border-left: 4px solid #0d6efd;
       padding: 1rem;
       font-family: monospace;
       overflow-x: auto;
+      white-space: pre-wrap;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.75rem;
+      text-align: left;
     }
     a {
-      color: #0077b6;
+      color: #0d6efd;
       text-decoration: none;
     }
     a:hover {
@@ -72,71 +83,66 @@
       font-weight: bold;
     }
   </style>
-  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 
 <header>
   <h1>DIY Arduino-Based Pressure Regulator</h1>
-  <p>Automated control for glove boxes using BMP180 and solenoid valve</p>
+  <p>Control gas flow automatically using BMP180, L298N and a solenoid valve</p>
 </header>
 
 <main>
+  <section>
+    <h2>Components Required</h2>
+    <ul>
+      <li><a href="https://robu.in/product/arduino-uno-r3/">Arduino Uno</a></li>
+      <li><a href="https://amzn.in/d/bEvsWri">L298N Motor Driver</a></li>
+      <li><a href="https://amzn.in/d/5KgvPuV">BMP180 Pressure Sensor</a></li>
+      <li><a href="https://robu.in/product/dc-12v-solenoid-valve-1-4-2-way-normally-closed-direct-pneumatic-valves-for-water-air-gas-hot/">12V Solenoid Valve (NC)</a></li>
+      <li><a href="https://amzn.in/d/dcFAOyV">Perfboard</a></li>
+    </ul>
+  </section>
 
-<section>
-  <h2>Components Required</h2>
-  <ul>
-    <li><a href="https://robu.in/product/arduino-uno-r3/">Arduino Uno</a></li>
-    <li><a href="https://amzn.in/d/bEvsWri">L298 Motor Driver</a></li>
-    <li><a href="https://amzn.in/d/5KgvPuV">BMP180 Pressure Sensor</a></li>
-    <li><a href="https://robu.in/product/dc-12v-solenoid-valve-1-4-2-way-normally-closed-direct-pneumatic-valves-for-water-air-gas-hot/">12V Solenoid Valve (Normally Closed)</a></li>
-    <li><a href="https://amzn.in/d/dcFAOyV">Perfboard</a></li>
-  </ul>
-</section>
+  <section>
+    <h2>Wiring Diagram</h2>
+    <div class="figure">
+      <img src="images/Diagram.png" alt="Wiring Diagram" />
+      <figcaption>Figure 1: Circuit wiring using Fritzing for BMP180, Arduino, L298N, and solenoid.</figcaption>
+    </div>
+  </section>
 
-<section>
-  <h2>Setup Instructions</h2>
-  <p>Begin by connecting the BMP180 sensor to the Arduino on a breadboard:</p>
-  <ul>
-    <li>A5 → SCL</li>
-    <li>A4 → SDA</li>
-    <li>3.3V → VCC</li>
-    <li>GND → GND</li>
-  </ul>
-  <p>Install the BMP180 library in Arduino IDE and upload the sensor test code below.</p>
+  <section>
+    <h2>L298N to Arduino Pin Mapping</h2>
+    <table>
+      <thead>
+        <tr><th>L298N Pin</th><th>Connection</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>IN1</td><td>Arduino pin 8</td></tr>
+        <tr><td>IN2</td><td>Arduino pin 9</td></tr>
+        <tr><td>OUT1, OUT2</td><td>Solenoid Valve</td></tr>
+        <tr><td>+12V</td><td>External power jack</td></tr>
+        <tr><td>GND</td><td>Common ground with Arduino</td></tr>
+        <tr><td>5V</td><td><strong>Leave disconnected or use jumper cap if needed</strong></td></tr>
+      </tbody>
+    </table>
+  </section>
 
-  <div class="figure">
-    <img src="image/Diagram.png" alt="Circuit Diagram">
-    <figcaption>Figure 1: Circuit Diagram</figcaption>
-  </div>
-</section>
+  <section>
+    <h2>Assembly on Perfboard</h2>
+    <div class="figure">
+      <img src="images/FInal_2.png" alt="Perfboard Top View" />
+      <figcaption>Figure 2: Top view of the final circuit on perfboard with power jack, L298, and solenoid.</figcaption>
+    </div>
+    <div class="figure">
+      <img src="images/Pins.png" alt="Perfboard Bottom View" />
+      <figcaption>Figure 3: Soldered connections under the perfboard showing pin mapping to Arduino and L298N.</figcaption>
+    </div>
+  </section>
 
-<section>
-  <h2>Perfboard Integration</h2>
-  <p>Use a perfboard to make the setup compact. Solder Berg pins aligned with the Arduino headers and connect the BMP180 and L298 driver via wires. Refer to the figure below.</p>
-
-  <div class="figure">
-    <img src="image/Pins.png" alt="Perfboard connection to Arduino">
-    <figcaption>Figure 2: Perfboard to Uno</figcaption>
-  </div>
-</section>
-
-<section>
-  <h2>Final Assembly</h2>
-  <p>Once all the connections are tested, solder IN1 and IN2 to Berg pins and insert the L298 driver onto the perfboard. Keep IN3 and IN4 floating unless needed. Connect the solenoid valve to outputs O1 and O2 of L298.</p>
-  
-  <div class="important">⚠️ Do not connect 12V directly to Arduino. Use external power for L298.</div>
-
-  <div class="figure">
-    <img src="image/FInal_2.png" alt="Final pressure regulator setup">
-    <figcaption>Figure 3: Final Setup</figcaption>
-  </div>
-</section>
-
-<section>
-  <h2>Code: BMP180 Sensor Test</h2>
-  <div class="code-block">
-<pre>
+  <section>
+    <h2>Code: BMP180 Sensor Test</h2>
+    <div class="code-block">
 #include &lt;Wire.h&gt;
 #include &lt;Adafruit_BMP085.h&gt;
 
@@ -159,14 +165,12 @@ void loop() {
   Serial.print("Temperature: "); Serial.print(temperature); Serial.println(" °C");
   delay(1000);
 }
-</pre>
-  </div>
-</section>
+    </div>
+  </section>
 
-<section>
-  <h2>Code: Pressure Regulator</h2>
-  <div class="code-block">
-<pre>
+  <section>
+    <h2>Code: Pressure Regulator</h2>
+    <div class="code-block">
 #include &lt;Wire.h&gt;
 #include &lt;Adafruit_BMP085.h&gt;
 
@@ -209,10 +213,13 @@ void loop() {
   }
   delay(1000);
 }
-</pre>
-  </div>
-</section>
+    </div>
+  </section>
 
+  <section>
+    <p class="important">⚠️ Important: Never connect 12V directly to the Arduino. Use external power supply only for the motor driver. Connect GNDs together.</p>
+  </section>
 </main>
+
 </body>
 </html>
