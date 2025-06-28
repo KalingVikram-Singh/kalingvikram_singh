@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Smart Pressure Control with Arduino, BMP180 & L298N</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DIY Arduino-Based Pressure Regulator</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f8f9fa;
+      line-height: 1.6;
       margin: 0;
       padding: 0;
-      color: #222;
+      background-color: #f8f9fa;
+      color: #333;
     }
     header {
-      background: #0077cc;
+      background: #212529;
       color: white;
+      padding: 1rem;
       text-align: center;
-      padding: 2rem 1rem;
     }
     main {
       max-width: 960px;
@@ -26,13 +27,16 @@
       background: white;
     }
     h1, h2, h3 {
-      color: #0077cc;
+      color: #0077b6;
     }
     ul {
       padding-left: 1.5rem;
     }
     li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+    section {
+      margin-bottom: 2rem;
     }
     .figure {
       text-align: center;
@@ -41,54 +45,43 @@
     .figure img {
       max-width: 100%;
       height: auto;
+      border-radius: 6px;
       border: 1px solid #ddd;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
     figcaption {
       font-style: italic;
-      font-size: 0.95rem;
-      color: #555;
       margin-top: 0.5rem;
+      color: #555;
     }
     .code-block {
-      background: #f4f4f4;
+      background: #f1f1f1;
+      border-left: 5px solid #0077b6;
       padding: 1rem;
       font-family: monospace;
       overflow-x: auto;
-      white-space: pre;
-      border-left: 4px solid #0077cc;
-      margin-bottom: 2rem;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 1rem 0;
+    a {
+      color: #0077b6;
+      text-decoration: none;
     }
-    table, th, td {
-      border: 1px solid #ccc;
+    a:hover {
+      text-decoration: underline;
     }
-    th, td {
-      padding: 0.75rem;
-      text-align: left;
-    }
-    .warning {
-      background: #fff3cd;
-      color: #856404;
-      border: 1px solid #ffeeba;
-      padding: 1rem;
-      margin: 2rem 0;
-      border-radius: 6px;
+    .important {
+      color: red;
+      font-weight: bold;
     }
   </style>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
 
 <header>
-  <h1>Smart Arduino Pressure Regulator</h1>
-  <p>Featuring BMP180 Sensor + L298N Motor Driver + Solenoid Valve</p>
+  <h1>DIY Arduino-Based Pressure Regulator</h1>
+  <p>Automated control for glove boxes using BMP180 and solenoid valve</p>
 </header>
 
+  
 <main>
 
   <section>
