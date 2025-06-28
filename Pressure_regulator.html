@@ -201,12 +201,13 @@ void loop() {
     </div>
   </section>
 
-  <section>
-    <h2>🚦 Final Code: Automatic Pressure Control</h2>
-    <div class="code-block">
+ <section>
+  <h2>🚦 Final Code: Automatic Pressure Control</h2>
+  <pre><code>
 // Solenoid control using pressure
 #include &lt;Wire.h&gt;
 #include &lt;Adafruit_BMP085.h&gt;
+
 #define IN1 8
 #define IN2 9
 #define PRESSURE_THRESHOLD 99780
@@ -245,8 +246,10 @@ void loop() {
   }
   delay(1000);
 }
-    </div>
-  </section>
+  </code></pre>
+</section>
+
+
 
 </main>
 </body>
